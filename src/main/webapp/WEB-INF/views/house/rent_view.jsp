@@ -30,6 +30,13 @@
 </style>
 <body>
 	<jsp:include page="header.jsp" />
+	<c:if test="${member_id == null}"> 
+		<a href="/cdb/member/CdbLogin.jsp">로그인</a>	
+	</c:if>
+	<c:if test="${member_id != null }">
+		<a href="/cdb/member/logout">로그아웃</a>
+	</c:if>
+	${member_id}
 	<hr>
 	<h2>입주자 모집공고</h2>
 	<hr>
@@ -164,15 +171,14 @@
 					map.setCenter(coords);
 				}
 			});
-		
 			
 		}) //click function
 		
 		var req = {
 				"scrap_title": "${list[0].br_pbname}",
-				"scrap_link" : 'rent_view?br_pbid=${list[0].br_pbid}&br_brtc=${list[0].br_brtc}',
-				"scrap_type" : "rent",
-				"scrap_member": "gildong"
+				"scrap_link" : '/cdb/house/rent_view?br_pbid=${list[0].br_pbid}&br_brtc=${list[0].br_brtc}',
+				"scrap_type" : "Rent",
+				"scrap_member": "${member_id}"
 			};
 		
 		// 스크랩 관련 ajax
@@ -180,26 +186,30 @@
 			$('.scr').click(
 				function(){
 					//var title = $('.title').text();
-					
-					$.ajax({
-						url: "rent_scrap",
-						type: "POST",
-						dataType: "json",
-						contentType : 'application/json',
-						data: JSON.stringify(req),
-						success: function(data) {
-							console.log(data);
+					if(req.scrap_member === '') {
+						alert("로그인이 필요합니다. 로그인 페이지로 넘어갑니다.");
+						location.href = "/cdb/member/CdbLogin.jsp";	
+					} else {
+						$.ajax({
+							url: "/cdb/scrap/rent_scrap",
+							type: "POST",
+							dataType: "json",
+							contentType : 'application/json',
+							data: JSON.stringify(req),
+							success: function(data) {
+								console.log(data);
+								
+								if(data == 0) {
+									alert("스크랩 완료");
+									location.reload();
+								} else {
+									alert("스크랩 취소");
+									location.reload();
+								}
+							} //success
 							
-							if(data == 0) {
-								alert("스크랩 완료");
-								location.reload();
-							} else {
-								alert("스크랩 취소");
-								location.reload();
-							}
-						} //success
-						
-					}) //ajax
+						}) //ajax
+					} //else
 				} //function
 			) // click
 		}) // root function

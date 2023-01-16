@@ -4,13 +4,12 @@
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-    <typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="yPolicyVO"></typeAlias>
-    <typeAlias type="com.multi.cdb.yPolicy.PageVO" alias="pageVO"></typeAlias>
+    	<typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="yPolicyVO"></typeAlias>
+    	<typeAlias type="com.multi.cdb.yPolicy.PageVO" alias="pageVO"></typeAlias>
 		<typeAlias type="com.multi.cdb.scrap.ScrapVO" alias = "scrapVO"></typeAlias>
 		<typeAlias type="com.multi.cdb.member.MemberVO" alias = "memberVO"></typeAlias>
 		<typeAlias type="com.multi.cdb.house.BorrowVO" alias="borrowVO" />
 		<typeAlias type="com.multi.cdb.house.BuyVO" alias="buyVO" />
-		<typeAlias type="com.multi.cdb.house.PageVO" alias="pageVO" />
 	</typeAliases>
 	
 	<mappers>

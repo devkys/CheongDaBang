@@ -29,12 +29,12 @@ public class YPolicyController {
 	public void yp_all(PageVO vo, Model model) {
 		vo.setStartEnd(vo.getPage());
 		List<YPolicyVO> list = yPolicyService.YpList(vo);
-		int count = yPolicyService.count();
-		int pages = page.pages(count);
+		//int count = yPolicyService.count();
+		//int pages = page.pages(count);
 		System.out.println(list);
 		model.addAttribute("list", list);
-		model.addAttribute("pages", pages);
-		model.addAttribute("count", count);
+		//model.addAttribute("pages", pages);
+		//model.addAttribute("count", count);
 	}
 	
 	/*

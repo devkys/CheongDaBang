@@ -30,6 +30,13 @@
 </style>
 <body>
 	<jsp:include page="header.jsp" />
+	<c:if test="${member_id == null}"> 
+		<a href="/cdb/member/CdbLogin.jsp">로그인</a>	
+	</c:if>
+	<c:if test="${member_id != null }">
+		<a href="/cdb/member/logout">로그아웃</a>
+	</c:if>
+	${member_id}
 	<hr>
 	<h2>입주자 모집공고</h2>
 	<hr>
@@ -140,33 +147,43 @@
 			});    
 			})
 		}) // click function	
-		
+	
+		var req = {
+				"scrap_title": "${list[0].by_pbname}",
+				"scrap_link" : '/cdb/house/rent_view?by_pbid=${list[0].by_pbid}&by_brtc=${list[0].by_brtc}',
+				"scrap_type" : "Sale",
+				"scrap_member": "${member_id}"
+			};
 		// 스크랩 관련 ajax
 		$(function(){
 			$('.scr').click(
 				function(){
-					var title = $('.title').text();
-					$.ajax({
-						url: "sale_scrap",
-						type: "POST",
-						dataType: "json",
-						data: {
-							title: title,
-							scrap_member: "hyeonji",
-							url: 'sale_view?by_pbid=${list[0].by_pbid}&by_brtc=${list[0].by_brtc}',
-						},
-						success: function(data){
-							console.log(data);
-							
-							if(data == 0){
-								alert("스크랩 완료");
-								location.reload();
-							} else {
-								alert("스크랩 취소");
-								location.reload();
-							}
-						} //success
-					}) //ajax
+					//var title = $('.title').text();
+					
+					if(req.scrap_membr === '') {
+						alert("로그인이 필요합니다. 로그인 페이지로 넘어갑니다.");
+						location.href = "/cdb/member/CdbLogin.jsp";
+					} else {
+						$.ajax({
+							url: "/cdb/scrap/sale_scrap",
+							type: "POST",
+							dataType: "json",
+							contentType: 'application/json',
+							data: JSON.stringify(req),
+							success: function(data){
+								console.log(data);
+								
+								if(data == 0){
+									alert("스크랩 완료");
+									location.reload();
+								} else {
+									alert("스크랩 취소");
+									location.reload();
+								}
+							} //success
+						}) //ajax
+					} //else
+					
 				} //function
 			) //click
 		}) //root function
