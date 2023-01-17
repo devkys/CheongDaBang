@@ -82,7 +82,7 @@ public class MemberController {
 //		}
 //	}
 
-	// 로그인
+	// 로그인 체크
 	@RequestMapping("member/loginCheck")
 	public void login(MemberVO vo, HttpSession session, Model model) {
 		MemberVO vo2 = service.login(vo);
@@ -98,7 +98,7 @@ public class MemberController {
 		model.addAttribute("loginCheck", result);
 	}
 
-	// view로 보내는 메서드
+	// 로그인 성공시 view로 보내는 메서드
 	@RequestMapping("member/login2")
 	public String views() {
 		return "member/login";

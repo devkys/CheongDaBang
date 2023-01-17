@@ -16,6 +16,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
+//javascript start
 	// 비밀 번호 변경
  	pwc = 0;
 	function pwupdate(){
@@ -31,6 +32,7 @@
 			pwdcheck.innerHTML = resultpwpw;
 		}
 	}
+	// 비밀 번호 확인
 	function pwcheck2() {
 		pw = document.getElementById("pw").value;
 		pwcheck = document.getElementById("pwcheck").value;
@@ -43,7 +45,7 @@
 		}
 		pwdcheck.innerHTML = resultpw;
 	}
-	
+//javascript end
 </script>
 </head>
 <body>
