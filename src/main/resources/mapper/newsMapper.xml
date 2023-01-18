@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="news">
-	<select id="list" resultType="NewsVO">
-		SELECT * FROM r_news ORDER BY pubDate desc limit 5 <!-- 상위5개만 출력 -->
+	<insert id="r_create" parameterType="newsVO"  >
+		insert into r_news values (#{no}, #{title}, #{link}, #{category}, #{author},#{pubDate},#{description})
+	</insert>
+	<!-- r은 하나의 row, 전체리스트 rows  resultType을 가지고 있어야 함.-->
+	<select id="one" parameterType="newsVO" resultType="newsVO">
+		select * from news where id = #{id}
 	</select>
-	
-	<select id="one" parameterType="NewsVO" 
-					resultType="NewsVO">
-		SELECT * FROM r_news 
-		where bbs_contents like concat('%',#{filtertext},'%')
-		
-		
+	<select id="all" resultType="newsVO">
+		select * from news
 	</select>
+	<!-- u는 id에 맞는 title, content수정  -->
+	<update id="up" parameterType="newsVO">
+		update news set title = #{title}, content = #{content} 
+		where id = #{id}
+	</update>
+	<!-- d는 id에 맞는 게시물 삭제 -->
+	<delete id="del" parameterType="newsVO">
+		delete from news where id = #{id}
+	</delete>
 </mapper>
+
+
+
+
+
+
