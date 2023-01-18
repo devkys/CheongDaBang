@@ -2,16 +2,20 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>청 다 방</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <!--  services와 cluster, drawing 라이브러리 불러오기 -->
@@ -29,7 +33,7 @@
 }
 </style>
 <body>
-	<jsp:include page="header.jsp" />
+<%@include file="../includes/header.jsp" %>
 	<hr>
 	<h2>입주자 모집공고</h2>
 	<hr>
@@ -89,9 +93,24 @@
 	
 	
 	<div id="map" style="width: 800px; height: 400px;"></div>
-	<jsp:include page="footer.jsp" />
+	<%@include file="../includes/footer.jsp" %>
 
 	<script>
+		$(document).ready(function() {
+			if("${member_id}" === '') {
+				$(".sign-in").css("visibility", "visible");
+				$(".sign-up").css("visibility", "visible");
+				$(".sign-out").css("visibility", "hidden");
+				$(".mypage").css("visibility", "hidden");
+			}
+			else {
+				$(".sign-in").css("visibility", "hidden");
+				$(".sign-up").css("visibility", "hidden");
+				$("sign-out").css("visibility", "visible");
+				$("mypage").css("visibility", "visible");
+			}
+		})
+	
 		$(".btn").click(function(){
 
 			$('#map').empty();
@@ -164,15 +183,14 @@
 					map.setCenter(coords);
 				}
 			});
-		
 			
 		}) //click function
 		
 		var req = {
 				"scrap_title": "${list[0].br_pbname}",
-				"scrap_link" : 'rent_view?br_pbid=${list[0].br_pbid}&br_brtc=${list[0].br_brtc}',
-				"scrap_type" : "rent",
-				"scrap_member": "gildong"
+				"scrap_link" : '/cdb/house/rent_view?br_pbid=${list[0].br_pbid}&br_brtc=${list[0].br_brtc}',
+				"scrap_type" : "Rent",
+				"scrap_member": "${member_id}"
 			};
 		
 		// 스크랩 관련 ajax
@@ -180,29 +198,34 @@
 			$('.scr').click(
 				function(){
 					//var title = $('.title').text();
-					
-					$.ajax({
-						url: "rent_scrap",
-						type: "POST",
-						dataType: "json",
-						contentType : 'application/json',
-						data: JSON.stringify(req),
-						success: function(data) {
-							console.log(data);
+					if(req.scrap_member === '') {
+						alert("로그인이 필요합니다. 로그인 페이지로 넘어갑니다.");
+						location.href = "/cdb/member/CdbLogin.jsp";	
+					} else {
+						$.ajax({
+							url: "/cdb/scrap/rent_scrap",
+							type: "POST",
+							dataType: "json",
+							contentType : 'application/json',
+							data: JSON.stringify(req),
+							success: function(data) {
+								console.log(data);
+								
+								if(data == 0) {
+									alert("스크랩 완료");
+									location.reload();
+								} else {
+									alert("스크랩 취소");
+									location.reload();
+								}
+							} //success
 							
-							if(data == 0) {
-								alert("스크랩 완료");
-								location.reload();
-							} else {
-								alert("스크랩 취소");
-								location.reload();
-							}
-						} //success
-						
-					}) //ajax
+						}) //ajax
+					} //else
 				} //function
 			) // click
 		}) // root function
+		
 		
 	</script>
 </body>
