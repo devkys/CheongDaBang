@@ -18,8 +18,14 @@
 	<select id="one" parameterType="BbsVO" 
 					resultType="BbsVO">
 		SELECT * FROM bbs 
-		where bbs_contents like '%'||#{filtertext}||'%'
-		
+		where
+			<if test="filter == 'bbs_contents'">
+				bbs_contents like concat('%',#{filtertext},'%')
+			</if>
+			<if test="filter == 'bbs_title'">
+			bbs_title like concat('%',#{filtertext},'%')
+			</if>
+
 		
 	</select>
 

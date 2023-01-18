@@ -9,19 +9,19 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class BbsDAO implements BbsDAOInter {
+public class BbsDAO{
 
 	@Autowired
 	SqlSessionTemplate my;
 
-	@Override
+	//게시물 메인화면 출력
 	public List<BbsVO> list() {
 		return my.selectList("bbs.list");
 	}
 	
+	//게시물 검색
 	public List<BbsVO> list1(BbsVO vo) {
 		System.out.println("키워드값 테스트 : " + vo.getFiltertext());
-		System.out.println(vo.getBbs_contents());
 		return my.selectList("bbs.one", vo);
 	}
 }

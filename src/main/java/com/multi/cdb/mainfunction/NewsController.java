@@ -16,7 +16,7 @@ public class NewsController {
 	@Autowired
 	NewsDAO newsService;
 
-	@RequestMapping("newsList")
+	@RequestMapping("mainfunction/newsList")
 	public void list(Model model) {
 		System.out.println();
 		List<NewsVO> list = newsService.list();

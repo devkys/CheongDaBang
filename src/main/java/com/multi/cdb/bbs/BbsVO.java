@@ -9,6 +9,7 @@ public class BbsVO {
 	private int c;
 	
 	private String filtertext; //검색내용
+	private String filter; //검색필터
 	
 	public int getC() {
 		return c;
@@ -53,11 +54,21 @@ public class BbsVO {
 	public void setFiltertext(String filtertext) {
 		this.filtertext = filtertext;
 	}
+	
+	
+	public String getFilter() {
+		return filter;
+	}
+	public void setFilter(String filter) {
+		this.filter = filter;
+	}
 	@Override
 	public String toString() {
 		return "BbsVO [bbs_id=" + bbs_id + ", bbs_title=" + bbs_title + ", member_id=" + member_id + ", bbs_contents="
-				+ bbs_contents + ", bbs_img=" + bbs_img + ", c=" + c + ", filtertext=" + filtertext + "]";
+				+ bbs_contents + ", bbs_img=" + bbs_img + ", c=" + c + ", filtertext=" + filtertext + ", filter="
+				+ filter + "]";
 	}
+	
 	
 	
 	

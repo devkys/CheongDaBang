@@ -20,7 +20,7 @@ public class YPolicyController {
 	YPolicyDAO dao;
 	
 
-	@RequestMapping("ypList")
+	@RequestMapping("mainfunction/ypList")
 	public void list(Model model) {
 		System.out.println();
 		List<YPolicyVO> list = dao.list();
