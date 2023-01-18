@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+	
+</script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			//서버에 있는 json 호출
+			//원할 때 순서상관없이 다른 서버의 자원을 호출하거나, 내서버의 다른 자원을 호출하고자 하는 경우
+			//ajax를 사용
+			$.ajax({
+				url : '../data/city.json',
+				success : function(x) {
+					$(x).each(function(a, b) {
+						idV = b.id
+						colorV = b.color
+						cityV = b.city
+						console.log(a + '>>' + idV + " " + colorV + " " + cityV)
+
+						$.ajax({
+							url : 'db_create2.jsp',
+							data : {
+								id : idV,
+								color : colorV,
+								city : cityV
+							},
+							success : function() {
+								console.log('db에 넣기 성공')
+							}
+
+						})
+
+					})
+				}
+
+			})//ajax
+
+		}) //b1
+	})
+</script>
+</head>
+<body>
+
+
+	<button id='b1'>member.json 읽어서 db에 넣기2</button>
+</body>
+</html>

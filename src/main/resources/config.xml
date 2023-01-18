@@ -4,12 +4,15 @@
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-    	<typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="yPolicyVO"></typeAlias>
-    	<typeAlias type="com.multi.cdb.yPolicy.PageVO" alias="pageVO"></typeAlias>
-		<typeAlias type="com.multi.cdb.scrap.ScrapVO" alias = "scrapVO"></typeAlias>
-		<typeAlias type="com.multi.cdb.member.MemberVO" alias = "memberVO"></typeAlias>
+    	<typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="yPolicyVO"/>
+    	<typeAlias type="com.multi.cdb.yPolicy.PageVO" alias="pageVO" />
+		<typeAlias type="com.multi.cdb.scrap.ScrapVO" alias = "scrapVO" />
+		<typeAlias type="com.multi.cdb.member.MemberVO" alias = "memberVO" />
 		<typeAlias type="com.multi.cdb.house.BorrowVO" alias="borrowVO" />
 		<typeAlias type="com.multi.cdb.house.BuyVO" alias="buyVO" />
+		<typeAlias type="com.multi.cdb.bbs.BbsVO" alias="bbsVO" />
+		<typeAlias type="com.multi.cdb.bbs.RecommendVO" alias="recommendVO" />
+		<typeAlias type="com.multi.cdb.bbs.ReplyVO" alias="replyVO" />
 	</typeAliases>
 	
 	<mappers>
@@ -18,5 +21,7 @@
 		<mapper resource="mapper/memberMapper.xml" />
 		<mapper resource="mapper/borrowMapper.xml" />
 		<mapper resource="mapper/buyMapper.xml" />
+		<mapper resource="mapper/bbsMapper.xml" />
+		<mapper resource="mapper/replyMapper.xml" /> 
 	</mappers>
 </configuration>
