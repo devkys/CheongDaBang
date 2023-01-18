@@ -36,42 +36,41 @@
 				</div>
 
 				<div class="mypage">
-					<a href="/cdb/member/MyPage.jsp"><i class="fa-solid fa-user fa-xl"></i></a> <span>마이페이지</span>
+					<a href="/cdb/member/MyPage.jsp"><i
+						class="fa-solid fa-user fa-xl"></i></a> <span>마이페이지</span>
 				</div>
 			</div>
 		</div>
+		<!--가로형 3단 드롭다운 메뉴-->
 
-
-		<div class="navbar">
-			<div class="nav_menu">
-				<ul>
-
-					<li><a href="#">청년 정책</a>
-						<ul>
-							<li><a href="#">전체 청년 정책</a></li>
-							<li><a href="#">맞춤 청년 정책</a></li>
-						</ul></li>
-
-					<li><a href="#">공공 주택 찾기</a>
-						<ul>
-							<li><a href="#">공공 임대 주택 찾기</a></li>
-							<li><a href="#">공공 분양 주택 찾기</a></li>
-						</ul></li>
-
-					<li><a href="#">일자리</a>
-						<ul>
-							<li><a href="#">채용정보</a></li>
-							<li><a href="#">급여 정산 계산기</a></li>
-						</ul></li>
-
-					<li><a href="#">커뮤니티</a>
-						<ul>
-							<li><a href="#">컨텐츠 게시판</a></li>
-							<li><a href="#">정보 공유 게시판</a></li>
-							<li><a href="#">자유 게시판</a></li>
-						</ul></li>
-				</ul>
-			</div>
+		<div id="menu">
+			<ul class="main1">
+				<li><a href="#">청년 정책</a>
+					<ul class="main2">
+						<li><a href="#">전체 청년 정책</a></li>
+						<li><a href="#">맞춤 청년 정책</a></li>
+					</ul>
+				</li>
+				<li><a href="#">공공 주택 찾기</a>
+					<ul class="main2">
+						<li><a href="#">공공 임대 주택 찾기</a></li>
+						<li><a href="#">공공 분양 주택 찾기</a></li>
+					</ul>
+				</li>
+				<li><a href="#">일자리 채용 정보</a>
+					<ul class="main2">
+						<li><a href="#">채용 정보</a></li>
+						<li><a href="#">급여 정산 계산기</a></li>
+					</ul>
+				</li>
+				<li><a href="#">커뮤니티</a>
+					<ul class="main2">
+						<li><a href="#">컨텐츠 게시판</a></li>
+						<li><a href="#">정보 공유 게시판</a></li>
+						<li><a href="#">자유 게시판</a></li>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</div>
 </header>

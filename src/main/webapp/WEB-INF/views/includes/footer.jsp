@@ -7,8 +7,8 @@
 	<div class="foo_div">
 
 		<div class="intro">
-			<ul>
-				<li><a href="#" style="color: #3C79F5">청다방은?</a></li>
+			<ul class="intro-list">
+				<li><a href="#" style="color: #3C79F5;">청다방은?</a></li>
 				<li><a href="#" style="color: #F0ECCF;">개인 정보 처리 방침</a></li>
 				<li><a href="#" style="color: #A3BB98">홈페이지 이용약관</a></li>
 				<li><a href="#" style="color: red;">오류 신고</a></li>
@@ -20,9 +20,9 @@
 
 			<div class="foo_git">
 				<a href="https://github.com/devkys/CheongDaBang"><i
-					class="fa-brands fa-github" style="color: #F2DEBA;"> 청다방 </i></a> <br>
+					class="fa-brands fa-github fa-lg" style="color: #285430;"> 청다방 </i></a> <br>
 			</div>
-
+<!-- 
 			<div class="foo__mail">
 				<i class="fa-solid fa-envelope"></i> 경서 keongseo1234@gmail.com<br>
 				<i class="fa-solid fa-envelope"></i> 혜지 heaji0320@gmail.com<br>
@@ -30,12 +30,11 @@
 				<i class="fa-solid fa-envelope"></i> 서유 <br> <i
 					class="fa-solid fa-envelope"></i> 동욱 revorution100@gmail.com<br> <i
 					class="fa-solid fa-envelope"></i> 명재 tandk97@gmail.com<br>
-			</div>
+			</div> -->
 		</div>
 
 		<div class="site">
 			<div class="site-title">
-				<i class="fa-solid fa-sitemap"></i>
 				<h2>관련 사이트</h2>
 			</div>
 			<select onchange="window.open(this.value);" class="drop_down">

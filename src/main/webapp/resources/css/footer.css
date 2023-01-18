@@ -19,44 +19,49 @@ a {
     background-color: #FBC252;
     display: flex;
     justify-content: space-around;
-    align-items: center;
     width: 100%;
-    padding: 2px 12px;
+    text-align: center;
+}
+.us h2{
+	color: #F0ECCF;
+	border-radius: .4rem;
+	padding: 2px 4px;
+	margin-top: 10px;
+}
+.foo_git {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-.intro ul {
-	padding-left: 0;	
-	padding: 4px 12px;
+.foo_git > a  > i {
+	background: #AACB73;
+	padding: 16px 20px;
+	margin: 0 auto;
+	
+	
 }
-.intro ul > li {
-    font-size: 12px;
-    list-style: none;
-    float: left;
-    padding: 20px;
+.intro-list {
+	list-style: none;
+	font-size: 20px;
+	margin: 0 auto;
+	padding: 30px 5px;
 }
 
-.us {
-    font-size: 15px;
-}
-
-.foo_mail > i {
-    font-size: 2px;
+.intro-list > li {
+	float: left;
+	padding: 4px 6px;
 }
 
 .site-title {
-    font-size: 35px;
-    display: flex;
-    justify-content:flex-start;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+	color: #F0ECCF;
+	margin-bottom: 15px;
+	margin-top: 10px;
 }
 
-.site-title h2 {
-    font-size: 28px;
-}
-
-
-.site select {
-    font-size: 20px;
+select {
+	background-color: #AACB73;
+	color: #285430;
+	text-align: center;
+	padding: 10px 5px;
 }

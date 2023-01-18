@@ -148,107 +148,61 @@ header {
     cursor: pointer;
 }
 
-ul li {
-    list-style: none;
+
+
+#menu {
+	height: 50px;
+	background: #0081C9;
+	border-radius: 0.5rem;
 }
 
-/* a {
-    text-decoration: none;
-    font-size: 20px;
-} */
-
-.nav_menu {
-    width: 100%;
-    height: 50px;
-    background-color: #0081C9;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 0.5rem;
+.main1 {
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+	list-style: none;
 }
 
-.nav_menu > ul > li {
-    padding-left: 0;
-    width: 300px;
-    position: relative;
-    align-items: center;
-    display: inline-block;
-    position: relative;
-    border-right: 1px solid rgba(0,0,0,0.15);
-}
-
-.nav_menu > ul > li:nth-child(1) {
+.main1 > li {
+	float: left;
+	width: 25%;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
 	border-left: 1px solid rgba(0,0,0,0.15);
 }
-
-.nav_menu > ul > li > a {
-    color: #F7F5EB;
+.main1 > li:last-child {
+	border-right: 1px solid rgba(0,0,0,0.15);
 }
 
-.nav_menu > ul > li > ul {
-    width: 250px;
-   	padding-left: 0;
-    position: absolute;
-    background-color: #0081C9;
-	margin-left: 20px;
-	opacity: 0;
-	visibility: hidden;
+.main1>li:hover .main2 {
+	left: 0;
 }
 
+.main1>li a {
+	display: block;
+	color: #F7F5EB;
+}
 
-.nav_menu > ul > li:hover > ul {
-	opacity: 1;
-	visibility: visible;
+.main1>li a:hover {
+	background: #82AAE3;
+    color: #fff;
+    font-weight: bold;
+}
+
+.main2 {
+	position: absolute;
+    top: 50px;
+   	background: #0081C9;
+    width: 100%;
+    padding-left:0;
+    left: -9999px;
     /* top-left | top-right | bottom-right | bottom-left */
-    border-radius: 0px 0px 10px 10px;
-    opacity: 90%;
-    transition: 0.2s all ease;
+  /*   border-radius: 0px 0px 10px 10px; */
+  
 }
 
-.nav_menu > ul > li > ul > li > a {
-    font-size: 17px;
-    color : #F7F5EB;
+.main2>li {
+    position: relative;
+    list-style: none;
 }
-
-.nav_menu > ul > li > ul > li {
-	padding-left:0;
-}
-
-.nav_menu > ul > li > ul > li:hover {
-    background-color: #82AAE3;
-    transition: all 0.5s ease;
-    opcacity: 90%
-    
-}
-
-.nav_menu > ul > li > ul > li:hover:last-child {
-    background-color: #82AAE3;
-    /* top-left | top-right | bottom-right | bottom-left */
-    border-radius: 0px 0px 10px 10px;
-}
-
-.navbar__toogleBtn {
-    position: absolute;
-    right: 2px;
-    font-size: 20px;
-    color: black;
-    display: none ;
-}
-
-/* 반응형 웹 */
-/* @media screen and (max-width: 655px) {
-    
-    .nav_menu {
-        display: none;
-    }
-    .user-info{
-        display: none;
-    }
-    .navbar__toogleBtn {
-        display: block;
-    }
-
-    .top {
-        justify-content: center;
-    }
-    
-} */
