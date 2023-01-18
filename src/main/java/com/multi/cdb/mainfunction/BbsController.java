@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.multi.cdb.bbs.BbsDAO;
-import com.multi.cdb.bbs.BbsServiceInter;
+import com.multi.cdb.bbs.BbsService;
 import com.multi.cdb.bbs.BbsVO;
 
 
@@ -16,12 +16,10 @@ import com.multi.cdb.bbs.BbsVO;
 public class BbsController {
 
 	@Autowired
-	BbsServiceInter bbsService;
+	BbsService bbsService;
 	
-	@Autowired
-	BbsDAO dao;
 
-	@RequestMapping("bbsList")
+	@RequestMapping("mainfunction/bbsList")
 	public void list(Model model) {
 		System.out.println();
 		List<BbsVO> list = bbsService.list();
@@ -29,12 +27,5 @@ public class BbsController {
 		
 	}
 	
-	@RequestMapping("bbsfilter")
-	public void filter(BbsVO vo, Model model) {
-		List<BbsVO> list1 = dao.list1(vo);
-		model.addAttribute("list1", list1);
-		System.out.println(vo.getBbs_contents());
-		
-	}
 
 }

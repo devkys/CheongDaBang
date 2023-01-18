@@ -8,10 +8,18 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class NewsDAO {
+	
 	@Autowired
 	SqlSessionTemplate my;
 
+	//메인 뉴스노출
 	public List<NewsVO> list() {
 		return my.selectList("news.list");
+	}
+	
+	//뉴스 제목 검색
+	public List<NewsVO> list2(NewsVO vo) {
+		System.out.println("키워드값 테스트 : " + vo.getFiltertext());
+		return my.selectList("news.one", vo);
 	}
 }

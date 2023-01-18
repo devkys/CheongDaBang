@@ -4,4 +4,12 @@
 	<select id="list" resultType="NewsVO">
 		SELECT * FROM r_news ORDER BY pubDate desc limit 5 <!-- 상위5개만 출력 -->
 	</select>
+	
+	<select id="one" parameterType="NewsVO" 
+					resultType="NewsVO">
+		SELECT * FROM r_news 
+		where bbs_contents like concat('%',#{filtertext},'%')
+		
+		
+	</select>
 </mapper>
