@@ -158,7 +158,7 @@ area:hover {
 </style>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<%-- <jsp:include page="header.jsp" /> --%>
 	<div class='total'>
 	<button id='btn'>전국 검색</button>
 	<br>
@@ -207,6 +207,6 @@ area:hover {
 	</div>
 	<div id="paging"></div>
 	</div>
-	<jsp:include page="footer.jsp" />
+	<%-- <jsp:include page="footer.jsp" /> --%>
 </body>
 </html>

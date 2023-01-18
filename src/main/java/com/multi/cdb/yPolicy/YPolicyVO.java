@@ -1,5 +1,8 @@
 package com.multi.cdb.yPolicy;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class YPolicyVO {
 	private String YP_ID; // 정책아이디
 	private String YP_NAME; // 정책명

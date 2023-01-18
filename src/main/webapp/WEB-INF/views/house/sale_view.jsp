@@ -29,7 +29,7 @@
 }
 </style>
 <body>
-	<jsp:include page="header.jsp" />
+<%@include file="../includes/header.jsp" %>
 	<c:if test="${member_id == null}"> 
 		<a href="/cdb/member/CdbLogin.jsp">로그인</a>	
 	</c:if>
@@ -86,7 +86,7 @@
 	</table>
 	
 	<div id="map" style="width: 800px; height: 400px;"></div>
-	<jsp:include page="footer.jsp" />
+	<%@include file="../includes/footer.jsp" %>
 
 	<script>
 		$(function() {

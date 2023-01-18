@@ -258,7 +258,7 @@ ul li.on a {
 </style>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+<%-- 	<jsp:include page="header.jsp" /> --%>
 	<div class='total'>
 	<button id='btn'>전국 검색</button>
 	<br>
@@ -308,6 +308,6 @@ ul li.on a {
 	<div id="displayCount"></div>
 	<ul id="paging"></ul>
 	</div>
-	<jsp:include page="footer.jsp" />
+<%-- 	<jsp:include page="footer.jsp" /> --%>
 </body>
 </html>
