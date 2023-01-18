@@ -1,27 +1,18 @@
 package com.multi.cdb.bbs;
 
 public class BbsVO {
-	private int bbs_id;
-	private String bbs_title;
-	private String member_id;
-	private String bbs_contents;
-	private String bbs_img;
+	int bbs_Id;
+	String bbs_title; 
+	String member_id;
+	String bbs_contents;
+	String bbs_img;
 	private int c;
 	
-	private String filtertext; //검색내용
-	private String filter; //검색필터
-	
-	public int getC() {
-		return c;
+	public int getBbs_Id() {
+		return bbs_Id;
 	}
-	public void setC(int c) {
-		this.c = c;
-	}
-	public int getBbs_id() {
-		return bbs_id;
-	}
-	public void setBbs_id(int bbs_id) {
-		this.bbs_id = bbs_id;
+	public void setBbs_Id(int bbs_Id) {
+		this.bbs_Id = bbs_Id;
 	}
 	public String getBbs_title() {
 		return bbs_title;
@@ -29,6 +20,7 @@ public class BbsVO {
 	public void setBbs_title(String bbs_title) {
 		this.bbs_title = bbs_title;
 	}
+	
 	public String getMember_id() {
 		return member_id;
 	}
@@ -46,32 +38,21 @@ public class BbsVO {
 	}
 	public void setBbs_img(String bbs_img) {
 		this.bbs_img = bbs_img;
+		
 	}
-	
-	public String getFiltertext() {
-		return filtertext;
+	public int getC() {
+		return c;
 	}
-	public void setFiltertext(String filtertext) {
-		this.filtertext = filtertext;
-	}
-	
-	
-	public String getFilter() {
-		return filter;
-	}
-	public void setFilter(String filter) {
-		this.filter = filter;
+	public void setC(int c) {
+		this.c = c;
 	}
 	@Override
 	public String toString() {
-		return "BbsVO [bbs_id=" + bbs_id + ", bbs_title=" + bbs_title + ", member_id=" + member_id + ", bbs_contents="
-				+ bbs_contents + ", bbs_img=" + bbs_img + ", c=" + c + ", filtertext=" + filtertext + ", filter="
-				+ filter + "]";
+		return "BbsVO [bbs_Id=" + bbs_Id + ", bbs_title=" + bbs_title + ", member_id=" + member_id + ", bbs_contents="
+				+ bbs_contents + ", bbs_img=" + bbs_img + "]";
 	}
 	
-	
-	
-	
+
 	
 	
 }

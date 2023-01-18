@@ -1,23 +1,55 @@
 package com.multi.cdb.bbs;
 
-import java.util.List;
+public class BbsService {
+	private int bbs_no;
+	private int id;
+	private String title;
+	private String content;
+	private String writer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+	public int getBbs_no() {
+		return bbs_no;
+	}
 
-@Service
-public class BbsService{
-	@Autowired
-	BbsDAO dao;
-	
-	//메인 게시물 노출
-	public List<BbsVO> list() {
-		return dao.list();
+	public void setBbs_no(int bbs_no) {
+		this.bbs_no = bbs_no;
 	}
-	
-	//메인 게시물 검색(내용, 제목)
-	public List<BbsVO> list1(BbsVO vo) {
-		return dao.list();
+
+	public int getId() {
+		return id;
 	}
-	
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
+	@Override
+	public String toString() {
+		return "BbsVO [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer + "]";
+	}
+
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<script type="text/javascript">
+	$(function () {
+		$('#b1').click(function () {
+			//서버에 있는 json 호출
+			//원할 때 순서상관없이 다른 서버의 자원을 호출하거나, 내서버의 다른 자원을 호출하고자 하는 경우
+			//ajax를 사용
+			$.ajax({
+				// url : 'http://localhost:8888/web00/data/member.json' 절대주소
+				url : '../data/member.json', // 상대주소
+				success : function (doc) {
+					//alert('받은 데이터는 ' + doc)
+					// for + for-each 문을 합해놓은 each문
+					// function(x,y) x : index , y : one(json)
+					$(doc).each(function (index, person) {
+						//console.log(index + '>>' + person)
+						id = person.id //person(json).id(key) 하면 value를 추출
+						email = person.email
+						car = person.car
+						console.log(index + '>>' + id + " " + email + " " + car)
+						
+						//내 서버에 받아서 db에 넣어주는 페이지 호출
+						//ajax 필요
+						//ajax안에 ajax 만들기 가능
+						$.ajax({
+							url : 'db_create.jsp',
+							async : false, // 비동기(순서없이 들어감) 기능 끔
+							data : {
+								id : id,
+								email : email,
+								car : car
+							},
+							success : function() {
+								console.log('db에 넣기 성공')
+								
+								
+							}//success2
+						})//ajax2
+					}) //each
+				} // success	
+			}) //ajax
+		}) //b1
+	})
+	
+</script>
+</head>
+<body>
+	
+	
+	<button id = 'b1'>member.json 읽어서 db에 넣기</button>
+</body>
+</html>
