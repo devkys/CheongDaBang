@@ -45,6 +45,7 @@ public class GetYpDataMain {
 			//System.out.println(jobj1.toString());
 
 			// 배열 형태이니 반복문을 이용
+
 			JSONArray jarr = jobj1.getJSONArray("emp");
 			System.out.println(jarr.length());
 			for (int i = 1; i < jarr.length(); i++) {
@@ -71,6 +72,18 @@ public class GetYpDataMain {
 				 YPolicyVO vo = new YPolicyVO(yP_ID, yP_NAME, yP_PI, yP_INFO, yP_CATEGORY,
 				 yP_SSIZE, yP_CONTENT, yP_RQMAGE, yP_RQMJOB, yP_RQMEDU, yP_RQMMAJR,
 				 yP_RQMFIELD, yP_AI, yP_PERIOD, yP_PROCEDURE, yP_ANM, yP_URL);
+				 
+				 
+				/*
+				 * vo.setYP_ID(yP_ID); vo.setYP_NAME(yP_NAME); vo.setYP_PI(yP_PI);
+				 * vo.setYP_INFO(yP_INFO); vo.setYP_CATEGORY(yP_CATEGORY);
+				 * vo.setYP_SSIZE(yP_SSIZE); vo.setYP_CONTENT(yP_CONTENT);
+				 * vo.setYP_RQMAGE(yP_RQMAGE); vo.setYP_RQMJOB(yP_RQMJOB);
+				 * vo.setYP_RQMEDU(yP_RQMEDU); vo.setYP_RQMMAJR(yP_RQMMAJR);
+				 * vo.setYP_RQMFIELD(yP_RQMFIELD); vo.setYP_AI(yP_AI);
+				 * vo.setYP_PERIOD(yP_PERIOD); vo.setYP_PROCEDURE(yP_PROCEDURE);
+				 * vo.setYP_ANM(yP_ANM); vo.setYP_URL(yP_URL);
+				 */
 				 
 				System.out.println(vo);
 				dao.insert(vo);

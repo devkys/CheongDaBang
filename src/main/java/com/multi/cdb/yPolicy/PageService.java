@@ -8,9 +8,9 @@ public class PageService {
 	public int pages(int count) {
 		int pages = 0;
 		if(count % 30 == 0) {
-			pages = count / 30; //120개 --> 12pages
+			pages = count / 30; //120개 --> 4pages
 		}else {
-			pages = count / 30 + 1; //122개 --> 13pages 
+			pages = count / 30 + 1; //122개 --> 5pages 
 		}
 		return pages;
 	}
