@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.multi.cdb.bbs.BbsVO;
+import com.multi.cdb.bbs.ReplyVO;
+
 @Controller
 public class ScrapController {
 	
@@ -75,6 +78,56 @@ public class ScrapController {
 		model.addAttribute("list", list);
 	}
 	
+	
+	
+	
+	
+	
+	
+	// 커뮤니티 작성 글 리스트 출력
+	@RequestMapping("member/MyBbs")
+	public void comlist(BbsVO vo, HttpSession session, Model model) {
+		String id = (String) session.getAttribute("member_id");
+		vo.setMember_id(id);
+		List<BbsVO> list = service.my_comlist(vo);
+		model.addAttribute("list", list);
+	}
+	
+	// 커뮤니티 작성 글 전체 리스트 출력
+	@RequestMapping("member/MyBbsALL")
+	public void comlistAll(BbsVO vo, HttpSession session, Model model) {
+		String id = (String) session.getAttribute("member_id");
+		vo.setMember_id(id);
+		List<BbsVO> list = service.my_comlistall(vo);
+		model.addAttribute("list", list);
+	}
+	
+//	// 커뮤니티 및 댓글 제목 클릭시 상세페이지로 넘어감
+//	@RequestMapping("bbs/bbs_contents")
+//	public void clicktitle(BbsVO vo, ReplyVO vo2,HttpSession session, Model model) {
+//		String id = (String) session.getAttribute("member_id");
+//		vo.setMember_id(id);
+//		List<BbsVO> list = service.my_comlist(vo);
+//		model.addAttribute("list", list);
+//	}
+	
+	// 커뮤니티 댓글 리스트 출력
+	@RequestMapping("member/MyBbsReply")
+	public void replylist(ReplyVO vo, HttpSession session, Model model) {
+		String id = (String) session.getAttribute("member_id");
+		vo.setMember_id(id);
+		List<ReplyVO> list = service.my_replylist(vo);
+		model.addAttribute("list", list);
+	}
+	
+	// 커뮤니티 댓글 전체 리스트 출력
+	@RequestMapping("member/MyBbsReplyALL")
+	public void replylistAll(ReplyVO vo, HttpSession session, Model model) {
+		String id = (String) session.getAttribute("member_id");
+		vo.setMember_id(id);
+		List<ReplyVO> list = service.my_replylistall(vo);
+		model.addAttribute("list", list);
+	}
 	
 	
 	

@@ -6,6 +6,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.multi.cdb.bbs.BbsVO;
+import com.multi.cdb.bbs.ReplyVO;
+
 @Repository
 public class ScrapDAO {
 	
@@ -42,6 +45,25 @@ public class ScrapDAO {
 		return mybatis.selectList("scrap.scraplistAll_Home", vo);
 	}
 	
+	// 커뮤니티 작성 글 10개 출력
+	public List<BbsVO> my_com(BbsVO vo) {
+		return mybatis.selectList("scrap.MyBBS_list", vo);
+	}
+
+	// 커뮤니티 작성 글 전체 출력
+	public List<BbsVO> my_comAll(BbsVO vo) {
+		return mybatis.selectList("scrap.MyBBS_all", vo);
+	}
+	
+	// 커뮤니티 댓글 10개 출력
+	public List<ReplyVO> my_reply(ReplyVO vo) {
+		return mybatis.selectList("scrap.MyBBS_replylist", vo);
+	}
+	
+	// 커뮤니티 댓글 전체 출력
+	public List<ReplyVO> my_replyAll(ReplyVO vo) {
+		return mybatis.selectList("scrap.MyBBS_replyall", vo);
+	}
 	
 	
 	

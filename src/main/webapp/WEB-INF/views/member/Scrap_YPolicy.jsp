@@ -12,7 +12,7 @@ if(size > 1){
 <table border="1">
 	<thead>
 		<tr align="center">
-			<td><strong>청년 정책</strong></td>
+			<th><strong>청년 정책</strong></th>
 		</tr>
 	</thead>
 	<c:forEach items="${list}" var="scrap_ypolicy">

@@ -12,12 +12,12 @@ if(size > 1){
 <table border="1">
 	<thead>
 		<tr align="center">
-			<td><strong>작성한 글</strong></td>
+			<th><strong>작성한 글</strong></th>
 		</tr>
 	</thead>
 	<c:forEach items="${list}" var="MyBbs">
 	<tr class="ttt">
-		<td><a href="${MyBbs.scrap_link}" target="_blank">${MyBbs.bbs_title}</a></td>
+		<td><a href="../bbs/bbs_contents?bbs_Id=${MyBbs.bbs_Id}" target="_blank">${MyBbs.bbs_title}</a></td>
 	</tr>
 	</c:forEach>
 	<tfoot>

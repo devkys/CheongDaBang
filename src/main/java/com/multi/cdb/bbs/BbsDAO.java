@@ -4,32 +4,55 @@ import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-@Repository
+@Component
 public class BbsDAO {
-	
+
 	@Autowired
-	SqlSessionTemplate mybatis;
+	SqlSessionTemplate my;
 	
-	// 커뮤니티 작성 글 10개 출력
-	public List<BbsVO> my_com(BbsVO vo) {
-		return mybatis.selectList("bbs.MyBBS_list", vo);
+	public BbsVO createdId() {
+		return my.selectOne("bbs.createdId");
 	}
+	
+	public List<BbsVO> list(BbsVO vo) {
+		return my.selectList("bbs.listId", vo);
+	}
+	
+	public List<BbsVO> list2(BbsVO vo) { 
+		return my.selectList("bbs.listTitle", vo);
+	}
+	
+	
+	
+	public List<BbsVO> all() { 
+		 return my.selectList("bbs.all"); }
 
-	// 커뮤니티 작성 글 전체 출력
-	public List<BbsVO> my_comAll(BbsVO vo) {
-		return mybatis.selectList("bbs.MyBBS_all", vo);
-	}
+	public List<BbsVO> recommend_sort() { 
+		return my.selectList("bbs.recommend_sort"); }
 	
-	// 커뮤니티 댓글 10개 출력
-	public List<ReplyVO> my_reply(ReplyVO vo) {
-		return mybatis.selectList("reply.MyBBS_replylist", vo);
-	}
+	public int count() {
+		return my.selectOne("bbs.count");
+	}                                                               
 	
-	// 커뮤니티 댓글 전체 출력
-	public List<ReplyVO> my_replyAll(ReplyVO vo) {
-		return mybatis.selectList("reply.MyBBS_replyall", vo);
+	public BbsVO one(int bbs_Id) {
+		return my.selectOne("bbs.one", bbs_Id);
+	}          
+	
+	public int recommend_count(RecommendVO vo) {
+		return my.selectOne("bbs.recommend_count", vo);
+	}    
+	public int insert(BbsVO vo) {
+		return my.insert("bbs.create", vo);
 	}
-
+	public int insert2(RecommendVO vo) {
+		return my.insert("bbs.recommend_in", vo);
+	}
+	public int up(BbsVO vo) {
+		return my.update("bbs.up", vo);
+	}
+	public int del(BbsVO vo) {
+		return my.delete("bbs.del", vo);
+	}
 }

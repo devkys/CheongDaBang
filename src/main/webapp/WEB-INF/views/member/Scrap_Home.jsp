@@ -12,10 +12,10 @@ if(size > 1){
 <table border="1">
 	<thead>
 		<tr align="center">
-			<td><strong>주택</strong></td>
+			<th><strong>주택</strong></th>
 		</tr>
 	</thead>
-	<c:forEach items="${list}" var="scrap_home">
+	<c:forEach items="${list}" var="scrap_home" >
 	<tr class="ttt">
 		<td><a href="${scrap_home.scrap_link}" target="_blank">${scrap_home.scrap_title}</a></td>
 	</tr>

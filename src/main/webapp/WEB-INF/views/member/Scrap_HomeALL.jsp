@@ -6,8 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>주택 스크랩 전체 리스트</title>
+<style type="text/css">
+div{
+display: grid;
+place-items: center;
+}
+table {
+	width: 333px;
+}
+</style>
 </head>
 <body>
+<h1 align="center">회원님의 전체 주택 스크랩 리스트</h1>
+<div>
 <table border="1">
 	<thead>
 		<tr align="center">
@@ -20,5 +31,6 @@
 	</tr>
 	</c:forEach>
 </table>
+</div>
 </body>
 </html>

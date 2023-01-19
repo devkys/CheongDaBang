@@ -1,33 +1,55 @@
 package com.multi.cdb.bbs;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-@Service
 public class BbsService {
-	
-	@Autowired
-	BbsDAO dao;
+	private int bbs_no;
+	private int id;
+	private String title;
+	private String content;
+	private String writer;
 
-	// 커뮤니티 작성 글 리스트 10개 불러오기
-	public List<BbsVO> my_comlist(BbsVO vo) {
-		return dao.my_com(vo);
+	public int getBbs_no() {
+		return bbs_no;
 	}
 
-	// 커뮤니티 작성 글 리스트 전체 불러오기
-	public List<BbsVO> my_comlistall(BbsVO vo) {
-		return dao.my_comAll(vo);
+	public void setBbs_no(int bbs_no) {
+		this.bbs_no = bbs_no;
 	}
-	
-	// 커뮤니티 작성 댓글 10개 불러오기
-	public List<ReplyVO> my_replylist(ReplyVO vo) {
-		return dao.my_reply(vo);
+
+	public int getId() {
+		return id;
 	}
-	
-	// 커뮤니티 작성 댓글 전체 불러오기
-	public List<ReplyVO> my_replylistall(ReplyVO vo) {
-		return dao.my_replyAll(vo);
+
+	public void setId(int id) {
+		this.id = id;
 	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getWriter() {
+		return writer;
+	}
+
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+
+	@Override
+	public String toString() {
+		return "BbsVO [id=" + id + ", title=" + title + ", content=" + content + ", writer=" + writer + "]";
+	}
+
 }

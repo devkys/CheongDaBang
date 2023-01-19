@@ -12,7 +12,7 @@ if(size > 1){
 <table border="1">
 	<thead>
 		<tr align="center">
-			<td><strong>일자리</strong></td>
+			<th><strong>일자리</strong></th>
 		</tr>
 	</thead>
 	<c:forEach items="${list}" var="scrap_job">
