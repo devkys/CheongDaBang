@@ -5,63 +5,73 @@
 <head>
 <meta charset="UTF-8">
 <title>청다방 마이페이지</title>
+<link rel="stylesheet" href="../resources/css/header.css">
+<link rel="stylesheet" href="../resources/css/footer.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 //jquery start
 $(function() {
 	// ajax 스크랩 리스트 출력 - 일자리
-	$(document).ready(function() {
 		$.ajax({
 			url : "Scrap_Job",
 			success : function(x) {
-				$('#Job').html(x)
-			},
-			error : function() {
-				$('#Job').html("스크랩 한 내용이 없습니다")
+				if(x.trim().length < 1){
+					$('#Job').html("스크랩 한 내용이 없습니다")
+				}else{
+					$('#Job').html(x)
+				}
 			}
 		})//ajax
-	})//ready
 	// ajax 스크랩 리스트 출력 - 정책
-	$(document).ready(function() {
 		$.ajax({
 			url : "Scrap_YPolicy",
 			success : function(x) {
-				$('#YPolicy').html(x)
-			},
-			error : function() {
-				$('#YPolicy').html("스크랩 한 내용이 없습니다")
+				if(x.trim().length < 1){
+					$('#YPolicy').html("스크랩 한 내용이 없습니다")
+				}else{
+					$('#YPolicy').html(x)
+				}
 			}
 		})//ajax
-	})//ready
 	// ajax 스크랩 리스트 출력 - 주택
-	$(document).ready(function() {
 		$.ajax({
 			url : "Scrap_Home",
 			success : function(x) {
-				$('#Home').html(x)
-			},
-			error : function() {
-				$('#Home').html("스크랩 한 내용이 없습니다")
+				if(x.trim().length < 1){
+					$('#Home').html("스크랩 한 내용이 없습니다")
+				}else{
+					$('#Home').html(x)
+				}
 			}
 		})//ajax
-	})//ready
-	// ajax 커뮤니티 글, 댓글 확인
-	$(document).ready(function() {
+	// ajax 커뮤니티 글 확인
 		$.ajax({
 			url : "MyBbs",
 			success : function(x) {
-				$('#Com').html(x)
-			},
-			error : function() {
-				$('#Com').html("작성한 글 또는 댓글이 없습니다")
+				if(x.trim().length < 1){
+					$('#Comb').html("작성하신 글이 없습니다")
+				}else{
+					$('#Comb').html(x)	
+				}
 			}
 		})//ajax
-	})//ready
+	// ajax 커뮤니티 댓글 확인
+		$.ajax({
+			url : "MyBbsReply",
+			success : function(x) {
+				if(x.trim().length < 1){
+					$('#ComR').html("작성한 댓글이 없습니다")
+				}else{
+					$('#ComR').html(x)	
+				}
+			}
+		})//ajax
 })//function
 //jquery end
 </script>
 </head>
 <body>
+<%@ include file="../WEB-INF/views/includes/header.jsp" %>
 <input type="hidden" name="member_id" value="${member_id}">
 마이페이지 버튼 누르면 여기로 옴 여기가 마이페이지 메인화면 <br>
 <a href="logout">로그아웃</a><br>
@@ -74,19 +84,19 @@ $(function() {
 스크랩 모아보기<br>
 청년정책<br>
 <div id="YPolicy"></div>
-
+<br>
 임대주택<br>
 <div id="Home"></div>
-
+<br>
 일자리<br>
 <div id="Job"></div>
+<br>
+커뮤니티에 작성하신 글<br>
+<div id="ComB"></div>
+<br>
+커뮤니티에 작성하신 댓글<br>
+<div id="ComR"></div>
 
-커뮤니티<br>
-<div id="Com"></div>
-
-
-
-
-캘린더
+<%@ include file="../WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>

@@ -1,6 +1,14 @@
+<%@page import="com.multi.cdb.scrap.ScrapVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<% @SuppressWarnings("unchecked")
+List<ScrapVO> list = (List<ScrapVO>)request.getAttribute("list");
+int size = list.size();
+if(size > 1){
+%>
 <table border="1">
 	<thead>
 		<tr align="center">
@@ -18,3 +26,4 @@
 		</tr>
 	</tfoot>
 </table>
+<% } %>

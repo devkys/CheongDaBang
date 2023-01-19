@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper.replyMapper"></mapper>
+<mapper namespace="reply">
+
+	<!-- 커뮤니티 댓글 10개 출력-->
+	<select id="MyBBS_replylist" parameterType="ReplyVO" resultType="ReplyVO"><!-- 커뮤니티 -->
+		select reply_id, reply_contents from Reply 
+		where member_id = #{member_id} order by reply_id desc limit 10;
+	</select>
+	
+	<!-- 커뮤니티 댓글 전체 출력 -->
+	<select id="MyBBS_replyall" parameterType="ReplyVO" resultType="ReplyVO">
+		select reply_id, reply_contents from Reply 
+		where member_id = #{member_id} order by reply_id desc
+	</select>
+
+</mapper>

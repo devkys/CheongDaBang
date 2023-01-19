@@ -6,10 +6,14 @@
 	<typeAliases>
 		<typeAlias type="com.multi.cdb.scrap.ScrapVO" alias = "scrapVO"></typeAlias>
 		<typeAlias type="com.multi.cdb.member.MemberVO" alias = "memberVO"></typeAlias>
+		<typeAlias type="com.multi.cdb.bbs.BbsVO" alias = "BbsVO"></typeAlias>
+		<typeAlias type="com.multi.cdb.bbs.ReplyVO" alias = "ReplyVO"></typeAlias>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mapper/scrapMapper.xml" />
 		<mapper resource="mapper/memberMapper.xml" />
+		<mapper resource="mapper/bbsMapper.xml" />
+		<mapper resource="mapper/replyMapper.xml" />
 	</mappers>
 </configuration>
