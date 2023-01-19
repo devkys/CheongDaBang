@@ -67,13 +67,15 @@ public class YPolicyController {
 	}
 
 	@RequestMapping("yPolicy/detailOne")
-	public void detailOne(YPolicyVO vo, Model model) {
+	public Object detailOne(YPolicyVO vo, Model model) {
 		// System.out.println(YP_NAME);
 		// 상세 페이지 클릭시 조회수 증가
 		yPolicyService.viewCount(vo);
 		List<YPolicyVO> list = yPolicyService.detailOne(vo.getYP_NAME());
 		System.out.println(list);
 		model.addAttribute("list", list);
+		
+		return list;
 	}
 
 }

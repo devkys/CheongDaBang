@@ -15,7 +15,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript">
-	$(function() {
+	/* $(function() {
 			$.ajax({
 				 url:"recruitList",
 				data:{pageNum: 1},
@@ -24,23 +24,13 @@
 				} 
 				
 			})		
-	})
+	}) */
 </script>
 </head>
 <body>
 <h3>임시메인</h3>
-<!-- 	<a href="recruitList?pageNum=1">구직 리스트 보기</a> -->
-	<a href="/">구직 리스트 보기</a>
 
-
-
-
-
-
-
-
-
-
+	<a href="/cdb/job/recruitList?pageNum=1">구직 리스트 보기</a>
 
 </body>
 </html>

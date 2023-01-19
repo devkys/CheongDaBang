@@ -17,7 +17,8 @@ header {
     width: 100%;
 }
 
-.logo {
+
+.logo h2 > a{
     /* float: left; */
     /* margin-left: 50px; */
     color: #3C79F5;

@@ -8,7 +8,7 @@
 
 		<div class="top">
 			<div class="logo">
-				<h2>청다방</h2>
+				<h2><a href="/cdb/main.jsp">청다방</a></h2>
 			</div>
 
 			<div class="search">

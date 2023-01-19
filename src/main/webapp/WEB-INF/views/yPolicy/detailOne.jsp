@@ -8,30 +8,45 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
 <script>
-	$('#scrap').click(function() {
-		$.ajax({
-			url : "policy_scrap",
-			type : "POST",
-			dataType: "json",
-			contentType : "application/json",
-			data : {
-				scrap_title: $('#YP_NAME').val(),
-				scrap_link: 'detailOne?YP_NAME=${vo.YP_NAME}&YP_VIEW=${vo.YP_VIEW}',
-				scrap_type: "Policy",
-				scrap_member : "member"
-			},
-			success : function(JSON.stringify(data)) {
-				console.log(data);
-				if (data == 0) {
-					alert("스크랩 완료");
-					location.reload();
-				} else {
-					alert("스크랩 취소");
-					location.reload();
-				}
-			} // success
-		}) // ajax
-	}) // scrap
+	
+	
+	req = {
+			scrap_title: $('#YP_NAME').val(),
+			scrap_link: 'detailOne?YP_NAME=${vo.YP_NAME}&YP_VIEW=${vo.YP_VIEW}',
+			scrap_type: "Policy",
+			scrap_member : "${member_id}"
+	};
+	// 스크랩 관련 ajax
+	$(function(){
+		$('#scrap').click(
+			function(){
+				//var title = $('.title').text();
+				
+					$.ajax({
+						url: "/cdb/scrap/policy_scrap",
+						type: "POST",
+						dataType: "json",
+						contentType : 'application/json',
+						
+						data: JSON.stringify(req),
+						success: function(data) {
+							console.log(data);
+							
+							if(data == 0) {
+								alert("스크랩 완료");
+								location.reload();
+							} else {
+								alert("스크랩 취소");
+								location.reload();
+							}
+						} //success
+						
+					}) //ajax
+			
+			} //function
+		) // click
+	}) // root function
+	
 </script>
 
 <table class="table">

@@ -16,8 +16,10 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="${path}/resources/css/header.css">
 <link rel="stylesheet" href="${path}/resources/css/footer.css">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<!-- <script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
+	
+<script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
 <!--  services와 cluster, drawing 라이브러리 불러오기 -->
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a5f34071e5fda04f41cf6edf0c5fd1b&libraries=services,clusterer,drawing"></script>
