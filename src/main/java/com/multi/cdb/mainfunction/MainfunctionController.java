@@ -1,0 +1,64 @@
+package com.multi.cdb.mainfunction;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.multi.cdb.bbs.*;
+import com.multi.cdb.yPolicy.YPolicyVO;
+
+@Controller
+public class MainfunctionController {
+	
+	
+	@Autowired
+	MainfunctionService mainfunctionService; 
+	
+	//메인 검색기능
+	@RequestMapping("mainfunction/bbsfilter")
+	public void bbsfilter(BbsfilterVO vo, Model model) {
+		List<BbsfilterVO> list1 = mainfunctionService.bbsfilter(vo);
+		model.addAttribute("list1", list1);
+		System.out.println("키워드값 테스트 컨트롤러 : " + vo.getFiltertext());
+		System.out.println(list1);
+		
+	}
+	
+	@RequestMapping("mainfunction/newsfilter")
+	public void newsfilter(NewsfilterVO vo, Model model) {
+		List<NewsfilterVO> list2 = mainfunctionService.newsfilter(vo);
+		model.addAttribute("list2", list2);
+		System.out.println("키워드값 테스트 컨트롤러 : " + vo.getFiltertext());
+		System.out.println(list2);
+		
+	}
+	
+	//메인 bbs 리스트
+	@RequestMapping("mainfunction/bbsList")
+	public void bbslist(Model model) {
+		System.out.println();
+		List<BbsVO> list = mainfunctionService.bbslist();
+		model.addAttribute("list", list);
+		
+	}
+	
+	//메인 news 리스트
+	@RequestMapping("mainfunction/newsList")
+	public void newslist(Model model) {
+		System.out.println();
+		List<NewsVO> list = mainfunctionService.newslist();
+		model.addAttribute("list", list);
+	}
+	
+	//메인 YP노출
+	@RequestMapping("mainfunction/ypList")
+	public void YPlist(Model model) {
+		System.out.println();
+		List<YPolicyVO> list = mainfunctionService.YPlist();
+		model.addAttribute("list", list);
+	}
+	
+}

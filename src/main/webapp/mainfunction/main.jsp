@@ -5,19 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<meta charset="UTF-8">
-
 <link rel="stylesheet" href="/resources/css/main.css">
 <link rel="stylesheet" href="${path}/resources/css/header.css">
 <link rel="stylesheet" href="${path}/resources/css/footer.css">
@@ -93,11 +80,17 @@
 							.text();
 					var url = ""
 					console.log(filtervar);
-					if (filtervar == "게시물내용" || "게시물제목") {
+					if (filtervar == "게시물내용") {
 						url = "bbsfilter"
-						console.log('test1');
-					} else if (filtervar == "뉴스") {
+						console.log('test0');
+						
+					}if (filtervar == "게시물제목") {
+						url = "bbsfilter"
+							console.log('test1');
+						}  
+					else if (filtervar == "뉴스") {
 						url = "newsfilter"
+							console.log('test2')
 					}
 					$("#searchform").attr("action", url).submit();
 
