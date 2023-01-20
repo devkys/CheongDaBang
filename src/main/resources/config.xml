@@ -13,10 +13,12 @@
 		<typeAlias type="com.multi.cdb.house.BorrowVO" alias="borrowVO" />
 		<typeAlias type="com.multi.cdb.house.BuyVO" alias="buyVO" />
 		<typeAlias type="com.multi.cdb.bbs.BbsVO" alias="bbsVO" />
+		<typeAlias type="com.multi.cdb.bbs.NewsVO" alias="newsVO" />
 		<typeAlias type="com.multi.cdb.bbs.RecommendVO" alias="recommendVO" />
 		<typeAlias type="com.multi.cdb.bbs.ReplyVO" alias="replyVO" />
-      <typeAlias type="com.multi.cdb.bbs.BbsfilterVO" alias="BbsfilterVO"></typeAlias>
-      <typeAlias type="com.multi.cdb.bbs.NewsfilterVO" alias="NewsfilterVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.bbs.BbsfilterVO" alias="BbsfilterVO" />
+      <typeAlias type="com.multi.cdb.bbs.NewsfilterVO" alias="NewsfilterVO" />
+      <typeAlias type="com.multi.cdb.job.JobVO" alias="jobVO"/>
    </typeAliases>
 
 	<mappers>

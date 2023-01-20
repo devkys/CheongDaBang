@@ -17,7 +17,6 @@
 <script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-<!--<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gog5rbcsmw"></script> -->
 
 <script>
 	// 전체 전국 지도 검색
@@ -215,20 +214,6 @@
 			}) // ajax
 		}) //area tag click
 	}) // function
-	$(document).ready(function() {
-		if("${member_id}" === '') {
-			$(".sign-in").css("visibility", "visible");
-			$(".sign-up").css("visibility", "visible");
-			$(".sign-out").css("visibility", "hidden");
-			$(".mypage").css("visibility", "hidden");
-		}
-		else {
-			$(".sign-in").css("visibility", "hidden");
-			$(".sign-up").css("visibility", "hidden");
-			$("sign-out").css("visibility", "visible");
-			$("mypage").css("visibility", "visible");
-		}
-	})	
 </script>
 <style>
 /* a {

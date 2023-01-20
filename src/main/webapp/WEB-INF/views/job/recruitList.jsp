@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +12,9 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
+	<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -37,8 +41,9 @@
 </head>
 
 <body>
+<%@include file="/WEB-INF/views/includes/header.jsp" %>
 	<!-- 전체검색  -->
-	<div>
+<div style="height: auto; min-height: 100%; padding-bottom: 50px;">
 	<form action="joblist" method="get">
 		<select class="form-select" aria-label="Default select example"
 			style="width: 140px; height: 35px; display: inline;">
@@ -47,7 +52,7 @@
 			<option ${ pageMaker.cri.type eq 'job_company' ? 'selected' : '' } value="job_company">기업명</option>
 		</select> <input type="text" name="keyword" value="job_title" style="height: 35px">
 		<button style="padding-top: 3px">
-			<img src="resources/img/searchIcon.png" alt="" width="25px"
+			<img src="${path}/resources/img/searchIcon.png" alt="" width="25px"
 				height="23px" style="margin-bottom: 2px">검색
 		</button>
 
@@ -97,7 +102,7 @@
 			
 		</div>
 		</form>
-	</div>
+	
 		<!-- 채용정보 목록 -->
 	<div id=jobList>
 
@@ -157,4 +162,6 @@
 			</ul>
 		</nav>
 	</div>
+</div>
+<%@include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>

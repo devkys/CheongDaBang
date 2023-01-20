@@ -11,25 +11,8 @@
 <link rel="stylesheet" href="${path}/resources/css/header.css">
 <link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript">
-
-
-$(document).ready(function() {
-	if("${member_id}" === '') {
-		$(".sign-in").css("visibility", "visible");
-		$(".sign-up").css("visibility", "visible");
-		$(".sign-out").css("visibility", "hidden");
-		$(".mypage").css("visibility", "hidden");
-	}
-	else {
-		$(".sign-in").css("visibility", "hidden");
-		$(".sign-up").css("visibility", "hidden");
-		$("sign-out").css("visibility", "visible");
-		$("mypage").css("visibility", "visible");
-	}
-})	
-
 
 //jquery start
 $(function() {
@@ -59,6 +42,7 @@ $(function() {
 </head>
 <body>
 <%@include file="/WEB-INF/views/includes/header.jsp" %>
+<div style="height:auto; min-height: 100%; padding-bottom: 50px;">
 	<!-- <div class="header">
 		<a href="www.google.com"><img src="../resources/img/chdabang.png"></a> -->
 		<h2>청다방 로그인 하기</h2>
@@ -84,6 +68,7 @@ $(function() {
 		<a href="MyIdfind.jsp">아이디 찾기</a>&nbsp;
 		<a href="MyPwfind.jsp">비밀번호 찾기</a>
 	</div>
+</div>
 <%@include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>

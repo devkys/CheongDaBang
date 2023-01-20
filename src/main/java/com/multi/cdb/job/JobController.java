@@ -19,7 +19,7 @@ public class JobController{
 	@Autowired
 	GetApiData getApiData; 
 	@Autowired
-	PageService page;
+	PageService2 page;
 	
 	@RequestMapping("insertApi")
 	public void name() {

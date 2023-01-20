@@ -2,9 +2,25 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<header>
-	<div class="total">
+<script type="text/javascript">
+$(document).ready(function() {
+	if("${member_id}" === '') {
+		$(".sign-in").css("visibility", "visible");
+		$(".sign-up").css("visibility", "visible");
+		$(".sign-out").css("visibility", "hidden");
+		$(".mypage").css("visibility", "hidden");
+	}
+	else {
+		$(".sign-in").css("visibility", "hidden");
+		$(".sign-up").css("visibility", "hidden");
+		$("sign-out").css("visibility", "visible");
+		$("mypage").css("visibility", "visible");
+	}
+})	
+</script>
 
+<header>
+	<div class="total" style="position: relative; z-index: 999;">
 
 		<div class="top">
 			<div class="logo">
@@ -43,7 +59,7 @@
 		</div>
 		<!--가로형 3단 드롭다운 메뉴-->
 
-		<div id="menu">
+		<div id="menu" style="margin-bottom: 70px;">
 			<ul class="main1">
 				<li><a href="/cdb/yPolicy/yp_all">청년 정책</a>
 					<ul class="main2">
@@ -57,9 +73,9 @@
 						<li><a href="/cdb/house/sale.jsp">공공 분양 주택 찾기</a></li>
 					</ul>
 				</li>
-				<li><a href="#">일자리 채용 정보</a>
+				<li><a href="/cdb/job/recruitList">일자리 채용 정보</a>
 					<ul class="main2">
-						<li><a href="#">채용 정보</a></li>
+						<li><a href="/cdb/job/recruitList">채용 정보</a></li>
 						<li><a href="#">급여 정산 계산기</a></li>
 					</ul>
 				</li>

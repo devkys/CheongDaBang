@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="../resources/css/yPolicyCss.css" />
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
+<script type="text/javascript" src="${path}/resources/js/jquery-3.6.1.js"></script>
 <link rel="stylesheet" href="${path}/resources/css/header.css">
 <link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
@@ -22,6 +22,7 @@
 </head>
 <body>
 <%@include file="/WEB-INF/views/includes/header.jsp" %>
+<div class="yp_total_div" style="height: auto; min-height: 100%; padding-bottom: 50px;">
 	<!-- 정책명 -->
 	<div class="input-group mb-3">
 		<input type="text" class="form-control"
@@ -105,6 +106,7 @@
 		<%
 			}
 		%>
+	</div>
 	</div>
 	<%@include file="/WEB-INF/views/includes/footer.jsp" %>
 	<script>

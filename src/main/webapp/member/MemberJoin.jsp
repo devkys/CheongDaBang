@@ -12,26 +12,9 @@
 <link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script src="../resources/js/cdbjoinjoin.js"></script>
-<script src="https://ajax.googlyyeapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
-
-
-$(document).ready(function() {
-	if("${member_id}" === '') {
-		$(".sign-in").css("visibility", "visible");
-		$(".sign-up").css("visibility", "visible");
-		$(".sign-out").css("visibility", "hidden");
-		$(".mypage").css("visibility", "hidden");
-	}
-	else {
-		$(".sign-in").css("visibility", "hidden");
-		$(".sign-up").css("visibility", "hidden");
-		$("sign-out").css("visibility", "visible");
-		$("mypage").css("visibility", "visible");
-	}
-})	
-
 
 // jquery start
 $(function() {

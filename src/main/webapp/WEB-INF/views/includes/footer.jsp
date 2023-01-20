@@ -47,6 +47,5 @@
 				<option value="https://www.mk.co.kr/rss">RSS 신문 기사</option>
 			</select>
 		</div>
-
 	</div>
 </footer>

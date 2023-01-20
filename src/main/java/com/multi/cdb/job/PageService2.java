@@ -3,7 +3,7 @@ package com.multi.cdb.job;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PageService {
+public class PageService2 {
 
 	public int pages(int count) {
 		int pages = 0;
