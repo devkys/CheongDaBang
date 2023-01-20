@@ -4,7 +4,7 @@ package com.multi.cdb.bbs;
 import java.util.Date;
 
 
-public class NewsVO {
+public class NewsfilterVO {
 	private String no;
 	private String title;
 	private String link;
@@ -13,6 +13,7 @@ public class NewsVO {
 	private Date pubdate;
 	private String description;
 	
+	private String filtertext; //검색내용
 	public String getNo() {
 		return no;
 	}
@@ -68,13 +69,20 @@ public class NewsVO {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getFiltertext() {
+		return filtertext;
+	}
+
+	public void setFiltertext(String filtertext) {
+		this.filtertext = filtertext;
+	}
 
 	@Override
 	public String toString() {
 		return "NewsVO [no=" + no + ", title=" + title + ", link=" + link + ", category=" + category + ", author="
-				+ author + ", pubdate=" + pubdate + ", description=" + description + "]";
+				+ author + ", pubdate=" + pubdate + ", description=" + description + ", filtertext=" + filtertext + "]";
 	}
-	
 
 	
 

@@ -3,7 +3,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<table class="table">
+<table class="table table-sm">
+	<tr>
+		<td>최근 등록뉴스</td>
+	</tr>
 	<tr>
 		<td>id</td>
 		<td>제목</td>
