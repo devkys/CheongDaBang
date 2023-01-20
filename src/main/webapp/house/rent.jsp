@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +12,9 @@
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
-<!-- <link rel="stylesheet" type="text/css" href="resources/css/house.css"> -->
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <!--<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=gog5rbcsmw"></script> -->
@@ -213,13 +215,26 @@
 			}) // ajax
 		}) //area tag click
 	}) // function
-	
+	$(document).ready(function() {
+		if("${member_id}" === '') {
+			$(".sign-in").css("visibility", "visible");
+			$(".sign-up").css("visibility", "visible");
+			$(".sign-out").css("visibility", "hidden");
+			$(".mypage").css("visibility", "hidden");
+		}
+		else {
+			$(".sign-in").css("visibility", "hidden");
+			$(".sign-up").css("visibility", "hidden");
+			$("sign-out").css("visibility", "visible");
+			$("mypage").css("visibility", "visible");
+		}
+	})	
 </script>
 <style>
-a {
+/* a {
 	text-decoration: none;
 	color: black;
-}
+} */
 a:hover {
 	font-weight: bold;	
 }
@@ -228,37 +243,36 @@ area:hover {
 	cursor: pointer;	
 }
 
-ul {
+/* #paging ul {
     text-align: center;
     display: inline-block;
     
     border-right: 0;
     list-style: none;
 }
-ul li {
+#paging ul li {
     text-align: center;
     float: left;
 }
 
-ul li a {
+#paging ul li a {
     display: block;
     font-size: 14px;
     padding: 9px 12px;
     box-sizing: border-box;
 }
 
-ul li.on {
-    /*  background: #eda712; */
+#paging ul li.on {
     background: #A9A9A9;
 }
 
-ul li.on a {
+#paging ul li.on a {
     color: #fff;
-}
+} */
 </style>
 </head>
 <body>
-<%-- 	<jsp:include page="header.jsp" /> --%>
+<%@include file="/WEB-INF/views/includes/header.jsp" %>
 	<div class='total'>
 	<button id='btn'>전국 검색</button>
 	<br>
@@ -308,6 +322,6 @@ ul li.on a {
 	<div id="displayCount"></div>
 	<ul id="paging"></ul>
 	</div>
-<%-- 	<jsp:include page="footer.jsp" /> --%>
+<%@include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>

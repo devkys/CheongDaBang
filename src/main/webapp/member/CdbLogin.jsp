@@ -1,13 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>청다방 로그인</title>
 <link rel="stylesheet" href="../resources/css/cdblogin.css">
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
+
+
+$(document).ready(function() {
+	if("${member_id}" === '') {
+		$(".sign-in").css("visibility", "visible");
+		$(".sign-up").css("visibility", "visible");
+		$(".sign-out").css("visibility", "hidden");
+		$(".mypage").css("visibility", "hidden");
+	}
+	else {
+		$(".sign-in").css("visibility", "hidden");
+		$(".sign-up").css("visibility", "hidden");
+		$("sign-out").css("visibility", "visible");
+		$("mypage").css("visibility", "visible");
+	}
+})	
+
+
 //jquery start
 $(function() {
 	// ajax 로그인 체크 기능
@@ -35,10 +58,11 @@ $(function() {
 </script>
 </head>
 <body>
-	<div class="header">
-		<a href="www.google.com"><img src="../resources/img/chdabang.png"></a>
+<%@include file="/WEB-INF/views/includes/header.jsp" %>
+	<!-- <div class="header">
+		<a href="www.google.com"><img src="../resources/img/chdabang.png"></a> -->
 		<h2>청다방 로그인 하기</h2>
-	</div>
+	<!-- </div> -->
 	<div class="find">
 			<table>
 				<tr>
@@ -60,5 +84,6 @@ $(function() {
 		<a href="MyIdfind.jsp">아이디 찾기</a>&nbsp;
 		<a href="MyPwfind.jsp">비밀번호 찾기</a>
 	</div>
+<%@include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>

@@ -1,15 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>청다방 회원가입</title>
 <link rel="stylesheet" href="../resources/css/cdbjoin.css">
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script src="../resources/js/cdbjoinjoin.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googlyyeapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
+
+
+$(document).ready(function() {
+	if("${member_id}" === '') {
+		$(".sign-in").css("visibility", "visible");
+		$(".sign-up").css("visibility", "visible");
+		$(".sign-out").css("visibility", "hidden");
+		$(".mypage").css("visibility", "hidden");
+	}
+	else {
+		$(".sign-in").css("visibility", "hidden");
+		$(".sign-up").css("visibility", "hidden");
+		$("sign-out").css("visibility", "visible");
+		$("mypage").css("visibility", "visible");
+	}
+})	
+
+
 // jquery start
 $(function() {
 	// ajax 아이디 중복 확인 기능
@@ -35,6 +58,7 @@ $(function() {
 </script>
 </head>
 <body>
+<%@include file="/WEB-INF/views/includes/header.jsp" %>
 <form id="memjoin" action="memjoin">
 	<div class="join">
 		<div class="input">
@@ -120,5 +144,6 @@ $(function() {
 		</div>
 	</div>
 </form>
+<%@include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 </html>

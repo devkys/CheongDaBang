@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,63 +15,13 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
-<script>
-	$(function() { // ram에 body를 dom tree로 다 읽어들이면 통신해서 다 불러오기
-		$('#b').click(function() {
-			/* 			$.ajax({
-			 url : 'YpList',
-			 data : {
-			 page : 1
-			 },
-			 success : function(table) {
-			 $('#result').html(table)
-			 }
-			 }) */
-			pageNum = $(this).attr('page')
-			$.ajax({
-				url : 'YpList',
-				data : {
-					page : pageNum
-				},
-				success : function(table) {
-					$('#result').html(table)
-				}
-			})
-		})
-		$('#b2').on("click", function() {
-			$.ajax({
-				url : "search",
-				data : {
-					YP_NAME : $('#YP_NAME').val(),
-					YP_CATEGORY : $('input[name="YP_CATEGORY"]:checked').val(),
-					YP_REGION : $('#YP_REGION').val()
-				},
-				type : "GET",
-				success : function(table) {
-					$("#button").empty(); // 페이지 버튼 사라짐
-					$("#result").html(table);
-				} // success
-			}); // ajax
-		}) // b2
-		$('.tab').on("click", function() {
-			category = $(this).text()
-			// alert(category)
-			$.ajax({
-				url : "selectOne",
-				data : {
-					YP_CATEGORY : category
-				},
-				type : "GET",
-				success : function(table) {
-					$("#button").empty(); // 페이지 버튼 사라짐
-					$("#result").html(table);
-				} // success
-			}); // ajax
-		})
-	})
-</script>
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
+<%@include file="/WEB-INF/views/includes/header.jsp" %>
 	<!-- 정책명 -->
 	<div class="input-group mb-3">
 		<input type="text" class="form-control"
@@ -155,5 +106,76 @@
 			}
 		%>
 	</div>
+	<%@include file="/WEB-INF/views/includes/footer.jsp" %>
+	<script>
+	$(function() { // ram에 body를 dom tree로 다 읽어들이면 통신해서 다 불러오기
+		$('#b').click(function() {
+			/* 			$.ajax({
+			 url : 'YpList',
+			 data : {
+			 page : 1
+			 },
+			 success : function(table) {
+			 $('#result').html(table)
+			 }
+			 }) */
+			pageNum = $(this).attr('page')
+			$.ajax({
+				url : 'YpList',
+				data : {
+					page : pageNum
+				},
+				success : function(table) {
+					$('#result').html(table)
+				}
+			})
+		})
+		$('#b2').on("click", function() {
+			$.ajax({
+				url : "search",
+				data : {
+					YP_NAME : $('#YP_NAME').val(),
+					YP_CATEGORY : $('input[name="YP_CATEGORY"]:checked').val(),
+					YP_REGION : $('#YP_REGION').val()
+				},
+				type : "GET",
+				success : function(table) {
+					$("#button").empty(); // 페이지 버튼 사라짐
+					$("#result").html(table);
+				} // success
+			}); // ajax
+		}) // b2
+		$('.tab').on("click", function() {
+			category = $(this).text()
+			// alert(category)
+			$.ajax({
+				url : "selectOne",
+				data : {
+					YP_CATEGORY : category
+				},
+				type : "GET",
+				success : function(table) {
+					$("#button").empty(); // 페이지 버튼 사라짐
+					$("#result").html(table);
+				} // success
+			}); // ajax
+		})
+	})
+	
+	$(document).ready(function() {
+			if("${member_id}" === '') {
+				$(".sign-in").css("visibility", "visible");
+				$(".sign-up").css("visibility", "visible");
+				$(".sign-out").css("visibility", "hidden");
+				$(".mypage").css("visibility", "hidden");
+			}
+			else {
+				$(".sign-in").css("visibility", "hidden");
+				$(".sign-up").css("visibility", "hidden");
+				$("sign-out").css("visibility", "visible");
+				$("mypage").css("visibility", "visible");
+			}
+		})
+</script>
 </body>
 </html>

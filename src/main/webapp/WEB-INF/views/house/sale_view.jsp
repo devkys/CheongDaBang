@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +13,14 @@
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
+	<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <!--  services와 cluster, drawing 라이브러리 불러오기 -->
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a5f34071e5fda04f41cf6edf0c5fd1b&libraries=services,clusterer,drawing"></script>
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 </head>
 
 <style>
@@ -30,13 +34,7 @@
 </style>
 <body>
 <%@include file="../includes/header.jsp" %>
-	<c:if test="${member_id == null}"> 
-		<a href="/cdb/member/CdbLogin.jsp">로그인</a>	
-	</c:if>
-	<c:if test="${member_id != null }">
-		<a href="/cdb/member/logout">로그아웃</a>
-	</c:if>
-	${member_id}
+
 	<hr>
 	<h2>입주자 모집공고</h2>
 	<hr>
@@ -187,6 +185,20 @@
 				} //function
 			) //click
 		}) //root function
+		$(document).ready(function() {
+			if("${member_id}" === '') {
+				$(".sign-in").css("visibility", "visible");
+				$(".sign-up").css("visibility", "visible");
+				$(".sign-out").css("visibility", "hidden");
+				$(".mypage").css("visibility", "hidden");
+			}
+			else {
+				$(".sign-in").css("visibility", "hidden");
+				$(".sign-up").css("visibility", "hidden");
+				$("sign-out").css("visibility", "visible");
+				$("mypage").css("visibility", "visible");
+			}
+		})
 	</script>
 </body>
 </html>

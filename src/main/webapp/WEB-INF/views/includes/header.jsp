@@ -8,7 +8,7 @@
 
 		<div class="top">
 			<div class="logo">
-				<h2><a href="/cdb/main.jsp">청다방</a></h2>
+				<a href="/cdb/mainfunction/main.jsp"><img src="${path}/resources/img/cdbLogo2.png" alt="cdblogo"></a>
 			</div>
 
 			<div class="search">
@@ -45,16 +45,16 @@
 
 		<div id="menu">
 			<ul class="main1">
-				<li><a href="#">청년 정책</a>
+				<li><a href="/cdb/yPolicy/yp_all">청년 정책</a>
 					<ul class="main2">
-						<li><a href="#">전체 청년 정책</a></li>
+						<li><a href="/cdb/yPolicy/yp_all">전체 청년 정책</a></li>
 						<li><a href="#">맞춤 청년 정책</a></li>
 					</ul>
 				</li>
-				<li><a href="#">공공 주택 찾기</a>
+				<li><a href="/cdb/house/rent.jsp">공공 주택 찾기</a>
 					<ul class="main2">
-						<li><a href="#">공공 임대 주택 찾기</a></li>
-						<li><a href="#">공공 분양 주택 찾기</a></li>
+						<li><a href="/cdb/house/rent.jsp">공공 임대 주택 찾기</a></li>
+						<li><a href="/cdb/house/sale.jsp">공공 분양 주택 찾기</a></li>
 					</ul>
 				</li>
 				<li><a href="#">일자리 채용 정보</a>
@@ -65,7 +65,7 @@
 				</li>
 				<li><a href="#">커뮤니티</a>
 					<ul class="main2">
-						<li><a href="#">컨텐츠 게시판</a></li>
+						<li><a href="/cdb/bbs/bbs_all">컨텐츠 게시판</a></li>
 						<li><a href="#">정보 공유 게시판</a></li>
 						<li><a href="#">자유 게시판</a></li>
 					</ul>

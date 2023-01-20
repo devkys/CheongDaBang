@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +19,15 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 
 <title>Insert title here</title>
 <!-- Bootstrap CSS -->
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script type="text/javascript">
-	$(function() {
+	/* $(function() {
 		$.ajax({
 			url : "bbsList",
 			success : function(result) {
@@ -52,10 +56,25 @@
 				alert('실패')
 			}
 		})
+	}) */
+	$(document).ready(function() {
+		if("${member_id}" === '') {
+			$(".sign-in").css("visibility", "visible");
+			$(".sign-up").css("visibility", "visible");
+			$(".sign-out").css("visibility", "hidden");
+			$(".mypage").css("visibility", "hidden");
+		}
+		else {
+			$(".sign-in").css("visibility", "hidden");
+			$(".sign-up").css("visibility", "hidden");
+			$("sign-out").css("visibility", "visible");
+			$("mypage").css("visibility", "visible");
+		}
 	})
 </script>
 </head>
 <body>
+<%@include file="/WEB-INF/views/includes/header.jsp" %>
 	<div id="wrap">
 		<div id="header">
 			<form id="searchform">
@@ -106,12 +125,15 @@
 		<div id="footer">
 		
 			배너
+			
+			
 		
 		</div>
 		<!-- 배너 -->
 	</div>
 
 
+<%@include file="/WEB-INF/views/includes/footer.jsp" %>
 </body>
 
 
