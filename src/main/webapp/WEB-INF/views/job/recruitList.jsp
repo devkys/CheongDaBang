@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>h
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -39,15 +39,14 @@
 <body>
 	<!-- 전체검색  -->
 	<div>
-	<form action="jobList" method="get">
+	<form action="joblist" method="get">
 		<select class="form-select" aria-label="Default select example"
 			style="width: 140px; height: 35px; display: inline;">
-			<option ${ pageMaker.cri.type eq '' ? 'selected' : '' } disabled>선택</option>
+			<option ${ pageMaker.cri.type eq '' ? 'selected' : '' } >선택</option>
 			<option ${ pageMaker.cri.type eq 'job_title' ? 'selected' : '' } value="job_title">공고제목</option>
 			<option ${ pageMaker.cri.type eq 'job_company' ? 'selected' : '' } value="job_company">기업명</option>
-		</select> 
-		<input type="text" name="keyword" value="${ pageMaker.cri.keyword }" style="height: 35px">
-		<button type="submit" style="padding-top: 3px">
+		</select> <input type="text" name="keyword" value="job_title" style="height: 35px">
+		<button style="padding-top: 3px">
 			<img src="resources/img/searchIcon.png" alt="" width="25px"
 				height="23px" style="margin-bottom: 2px">검색
 		</button>
@@ -116,7 +115,7 @@
 					<c:when test='${ fn:length(list) gt 0}'>
 						<c:forEach var="vo" items='${list}'>
 							<tr
-								onclick="location.href='one?job_wantedAuthNo=${vo.job_wantedAuthNo}'">
+								onclick="location.href='/cdb/job/one?job_wantedAuthNo=${vo.job_wantedAuthNo}'">
 								<td>${vo.job_company}</td>
 								<td>${vo.job_title}<br> 경력: ${vo.job_career} | 최소학력:
 									${vo.job_minEdubg }

@@ -35,9 +35,9 @@ color: #444;}
 마감일자: ${ vo.job_closeDt }<br>
 근무지 우편번호: ${ vo.job_zipCd }<br>
 근무지 도로명주소: ${ vo.job_strtnmCd }<br>
-근무지 기본주소: ${ vo.job_basicAddr }<br><br><br>
-<button><a href="${ vo.job_wantedInfoUrl }">워크넷</a></button> 
-<button><a href="${ vo.job_wantedMobileInfoUrl }">워크넷모바일</a></button><br>
+근무지 기본주소: ${ vo.job_basicAddr }<br><br><br><br>
+<button><a href="${ vo.job_wantedInfoUrl }">채용정보 제공 사이트로 이동</a></button> 
+<button><a href="${ vo.job_wantedMobileInfoUrl }">채용정보 제공 모바일사이트로 이동</a></button><br>
 </c:forEach>
 </body>
 </html>

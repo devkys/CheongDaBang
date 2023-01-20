@@ -16,7 +16,7 @@
 			<c:choose>
 				<c:when test='${ fn:length(list) gt 0}'>
 					<c:forEach var="vo" items='${list}'>
-						<tr onclick="location.href='one?job_wantedAuthNo=${vo.job_wantedAuthNo}'">
+						<tr onclick="location.href='/cdb/job/one?job_wantedAuthNo=${vo.job_wantedAuthNo}'">
 							<td>${vo.job_company}</td>
 							<td>${vo.job_title}
 								<br>
