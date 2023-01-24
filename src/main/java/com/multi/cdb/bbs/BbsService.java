@@ -1,5 +1,6 @@
 package com.multi.cdb.bbs;
 
+
 public class BbsService {
 	private int bbs_no;
 	private int id;
@@ -53,3 +54,4 @@ public class BbsService {
 	}
 
 }
+

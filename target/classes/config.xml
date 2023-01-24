@@ -19,6 +19,7 @@
       <typeAlias type="com.multi.cdb.bbs.BbsfilterVO" alias="BbsfilterVO" />
       <typeAlias type="com.multi.cdb.bbs.NewsfilterVO" alias="NewsfilterVO" />
       <typeAlias type="com.multi.cdb.job.JobVO" alias="jobVO"/>
+       <typeAlias type="com.multi.cdb.bbs.BbsPageVO" alias="bbsPageVO"></typeAlias>
    </typeAliases>
 
 	<mappers>

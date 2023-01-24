@@ -81,9 +81,8 @@ $(document).ready(function() {
 				</li>
 				<li><a href="#">커뮤니티</a>
 					<ul class="main2">
-						<li><a href="/cdb/bbs/bbs_all">컨텐츠 게시판</a></li>
-						<li><a href="#">정보 공유 게시판</a></li>
-						<li><a href="#">자유 게시판</a></li>
+						<li><a href="/cdb/bbs/bbs_main.jsp">정보 공유 게시판</a></li>
+						<li><a href="/cdb/bbs/news2.jsp">최신 뉴스</a></li>
 					</ul>
 				</li>
 			</ul>

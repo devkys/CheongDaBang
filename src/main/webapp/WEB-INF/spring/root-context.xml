@@ -35,7 +35,8 @@
 	</bean>
 	<context:component-scan
 		base-package="com.multi.cdb.*" />
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-		<property name="maxUploadSize" value="10485760" />
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10485760"></property>
 	</bean>
 </beans>
