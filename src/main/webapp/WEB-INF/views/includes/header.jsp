@@ -57,8 +57,8 @@ $(document).ready(function() {
 				</div>
 			</div>
 		</div>
-		<!--가로형 3단 드롭다운 메뉴-->
 
+		<!--가로형 3단 드롭다운 메뉴-->
 		<div id="menu" style="margin-bottom: 70px;">
 			<ul class="main1">
 				<li><a href="/cdb/yPolicy/yp_all">청년 정책</a>
@@ -81,9 +81,8 @@ $(document).ready(function() {
 				</li>
 				<li><a href="#">커뮤니티</a>
 					<ul class="main2">
-						<li><a href="/cdb/bbs/bbs_all">컨텐츠 게시판</a></li>
-						<li><a href="#">정보 공유 게시판</a></li>
-						<li><a href="#">자유 게시판</a></li>
+						<li><a href="/cdb/bbs/bbs_all">정보공유 게시판</a></li>
+						<li><a href="#">청년 뉴스</a></li>
 					</ul>
 				</li>
 			</ul>

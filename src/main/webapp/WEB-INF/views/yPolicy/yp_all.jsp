@@ -164,20 +164,7 @@
 		})
 	})
 	
-	$(document).ready(function() {
-			if("${member_id}" === '') {
-				$(".sign-in").css("visibility", "visible");
-				$(".sign-up").css("visibility", "visible");
-				$(".sign-out").css("visibility", "hidden");
-				$(".mypage").css("visibility", "hidden");
-			}
-			else {
-				$(".sign-in").css("visibility", "hidden");
-				$(".sign-up").css("visibility", "hidden");
-				$("sign-out").css("visibility", "visible");
-				$("mypage").css("visibility", "visible");
-			}
-		})
+	
 </script>
 </body>
 </html>
