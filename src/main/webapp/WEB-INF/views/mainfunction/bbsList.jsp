@@ -2,20 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-<table class="table-primary">
+<h4>인기게시물</h4>
+<table class="table table-striped table-hover">
 	<tr>
-		<td>인기게시물</td>
-	</tr>
-	<tr>
-		<td>id</td>
+		<td>순위</td>
 		<td>제목</td>
 		<td>사용자</td>
 		<td>추천수</td>
 	</tr>
 	<c:forEach items="${list}" var="one">
+		<c:set var="i" value="${i+1}" />
 		<tr>
-			<td>${one.bbs_id}</td>
+			<td width="70">${i}</td>
 			<td><a href="bbsOne?bbs_id=${one.bbs_id}">${one.bbs_title}</a></td>
 			<td width="100">${one.member_id}</td>
 			<td width="100">${one.c}</td>

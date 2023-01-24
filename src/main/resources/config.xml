@@ -1,37 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
- PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ PUBLIC "-//batis.apache.org//DTD Config 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
 	<!-- SQL문 정의할 때 VO표현을 간단하게 하고 싶은 경우. 별명을 지어서 사용 -->
    <typeAliases>
-    	<typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="yPolicyVO"/>
-    	<typeAlias type="com.multi.cdb.yPolicy.PageVO" alias="pageVO" />
-		<typeAlias type="com.multi.cdb.scrap.ScrapVO" alias = "scrapVO" />
-		<typeAlias type="com.multi.cdb.member.MemberVO" alias = "memberVO" />
-		<typeAlias type="com.multi.cdb.house.BorrowVO" alias="borrowVO" />
-		<typeAlias type="com.multi.cdb.house.BuyVO" alias="buyVO" />
-		<typeAlias type="com.multi.cdb.bbs.BbsVO" alias="bbsVO" />
-		<typeAlias type="com.multi.cdb.bbs.NewsVO" alias="newsVO" />
-		<typeAlias type="com.multi.cdb.bbs.RecommendVO" alias="recommendVO" />
-		<typeAlias type="com.multi.cdb.bbs.ReplyVO" alias="replyVO" />
-      <typeAlias type="com.multi.cdb.bbs.BbsfilterVO" alias="BbsfilterVO" />
-      <typeAlias type="com.multi.cdb.bbs.NewsfilterVO" alias="NewsfilterVO" />
-      <typeAlias type="com.multi.cdb.job.JobVO" alias="jobVO"/>
+      <typeAlias type="com.multi.cdb.bbs.BbsVO" alias="BbsVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.bbs.ReplyVO" alias="ReplyVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.bbs.NewsVO" alias="NewsVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="YPolicyVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.bbs.BbsfilterVO" alias="BbsfilterVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.bbs.NewsfilterVO" alias="NewsfilterVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.mainfunction.filtertextVO" alias="filtertextVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.job.JobVO" alias="JobVO"></typeAlias>
    </typeAliases>
 
 	<mappers>
 		<!-- SQL문 정의하는 파일들의 목록을 지정. -->
-		<mapper resource="mapper/bbsMapper.xml" />
-		<mapper resource="mapper/borrowMapper.xml" />
-		<mapper resource="mapper/buyMapper.xml" />
-		<mapper resource="mapper/jobMapper.xml" />
+
 		<mapper resource="mapper/mainfunctionMapper.xml" />
-		<mapper resource="mapper/memberMapper.xml" />
-		<mapper resource="mapper/newsMapper.xml" />
-		<mapper resource="mapper/replyMapper.xml" /> 
-		<mapper resource="mapper/scrapMapper.xml" />
-   		<mapper resource="mapper/yPolicyMapper.xml" />
 	</mappers>
 </configuration>
