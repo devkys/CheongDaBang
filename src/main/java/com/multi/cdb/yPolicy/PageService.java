@@ -7,10 +7,10 @@ public class PageService {
 
 	public int pages(int count) {
 		int pages = 0;
-		if(count % 30 == 0) {
-			pages = count / 30; //120개 --> 4pages
+		if(count % 28 == 0) {
+			pages = count / 28; //120개 --> 4pages
 		}else {
-			pages = count / 30 + 1; //122개 --> 5pages 
+			pages = count / 28 + 1; //122개 --> 5pages 
 		}
 		return pages;
 	}

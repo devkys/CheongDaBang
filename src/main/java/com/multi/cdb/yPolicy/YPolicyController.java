@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class YPolicyController {
@@ -27,27 +26,22 @@ public class YPolicyController {
 		getYpDataMain.main();
 	}
 
-	@RequestMapping("yPolicy/yp_all")
-	public void yp_all(PageVO vo, Model model) {
-		vo.setStartEnd(vo.getPage());
-		List<YPolicyVO> list = yPolicyService.YpList(vo);
-		int count = yPolicyService.count();
-		int pages = page.pages(count);
-		System.out.println(list);
+	// 첫 페이지 + 페이지 리스트 불러오기
+	@GetMapping("yPolicy/yp_all")
+	public void yp_all(CriteriaYP cri, Model model) {
+		System.out.println("list: " + cri.getPageNum());
+		
+		// 특정한 페이지 DB에서 목록 가져옴
+		List<YPolicyVO> list = yPolicyService.YpList(cri);
+		
+		// 페이지의 시작, 중간, 끝 페이지 목록
+		List<YPolicyVO> allList = yPolicyService.all();
+		int totalCount = allList.size();
+		System.out.println("totalCount : " +  totalCount); 
+		PageVO pageVO = new PageVO(cri, totalCount);
+		
 		model.addAttribute("list", list);
-		model.addAttribute("pages", pages);
-		System.out.println(pages);
-		model.addAttribute("count", count);
-	}
-
-	@RequestMapping("yPolicy/YpList")
-	public void list22(PageVO vo, Model model) {
-		System.out.println("page값>> " + vo);
-		vo.setStartEnd(vo.getPage());
-		System.out.println("start/end값>> " + vo);
-		List<YPolicyVO> list = yPolicyService.YpList(vo);
-		System.out.println("list값>> " + list);
-		model.addAttribute("list", list);
+		model.addAttribute("pageMaker", pageVO);
 	}
 
 	@RequestMapping("yPolicy/selectOne")
@@ -72,11 +66,16 @@ public class YPolicyController {
 		// 상세 페이지 클릭시 조회수 증가
 		yPolicyService.viewCount(vo);
 		List<YPolicyVO> list = yPolicyService.detailOne(vo.getYP_NAME());
-
-//		System.out.println(vo);
 		System.out.println(list);
 		model.addAttribute("list", list);
-		
+	}
+	
+	@RequestMapping("yPolicy/ypRecommend")
+	public void ypRecommend(YPolicyVO vo, Model model) {
+		System.out.println(vo);
+		List<YPolicyVO> list = yPolicyService.ypRecommend(vo);
+		System.out.println(list);
+		model.addAttribute("list", list);
 	}
 
 }

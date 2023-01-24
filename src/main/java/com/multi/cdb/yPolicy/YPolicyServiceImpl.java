@@ -22,10 +22,18 @@ public class YPolicyServiceImpl implements YPolicyServiceInterface {
 		System.out.println(vo);
 		return dao.search(vo);
 	}
+
+	@Override
+	public List<YPolicyVO> YpList(CriteriaYP cri) {
+		int startRow = (cri.getPageNum() - 1) * cri.getAmount();
+		cri.setStartRow(startRow);
+		
+		return dao.YpList(cri);
+	}
 	
 	@Override
-	public List<YPolicyVO> YpList(PageVO vo) {
-		return dao.YpList(vo);
+	public List<YPolicyVO> all(){
+		return dao.all();
 	}
 
 	@Override
@@ -37,14 +45,19 @@ public class YPolicyServiceImpl implements YPolicyServiceInterface {
 	public List<YPolicyVO> detailOne(String YP_NAME) {
 		return dao.detailOne(YP_NAME);
 	}
-	
+
 	@Override
 	public void viewCount(YPolicyVO vo) {
 		dao.viewCount(vo);
 	}
-	
+
 	@Override
 	public int count() {
 		return dao.count();
+	}
+	
+	@Override
+	public List<YPolicyVO> ypRecommend(YPolicyVO vo){
+		return dao.ypRecommend(vo);
 	}
 }

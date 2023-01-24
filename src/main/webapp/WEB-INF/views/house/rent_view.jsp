@@ -36,6 +36,7 @@
 </style>
 <body>
 <%@include file="../includes/header.jsp" %>
+<div style="height: auto; min-height: 100%; padding-bottom:50px;">
 	<hr>
 	<h2>입주자 모집공고</h2>
 	<hr>
@@ -95,23 +96,10 @@
 	
 	
 	<div id="map" style="width: 800px; height: 400px;"></div>
+	</div>
 	<%@include file="../includes/footer.jsp" %>
 
 	<script>
-		$(document).ready(function() {
-			if("${member_id}" === '') {
-				$(".sign-in").css("visibility", "visible");
-				$(".sign-up").css("visibility", "visible");
-				$(".sign-out").css("visibility", "hidden");
-				$(".mypage").css("visibility", "hidden");
-			}
-			else {
-				$(".sign-in").css("visibility", "hidden");
-				$(".sign-up").css("visibility", "hidden");
-				$("sign-out").css("visibility", "visible");
-				$("mypage").css("visibility", "visible");
-			}
-		})
 	
 		$(".btn").click(function(){
 

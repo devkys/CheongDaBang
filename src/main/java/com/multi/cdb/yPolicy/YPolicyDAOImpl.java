@@ -1,9 +1,12 @@
 package com.multi.cdb.yPolicy;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -30,15 +33,20 @@ public class YPolicyDAOImpl implements YPolicyDAOInterface {
 	}
 
 	@Override
-	public List<YPolicyVO> YpList(PageVO vo) {
+	public List<YPolicyVO> YpList(CriteriaYP cri) {
 		// select YP_CATEGORY, YP_NAME, YP_PI from YP
-		return my.selectList("yp.all", vo);
+		return my.selectList("yp.all", cri);
 		/*
 		 * mongoDB로 실행해봄 Query query = new Query(); return mongo.find(query,
 		 * YPolicyVO.class, "yp");
 		 */
 	}
-
+	
+	@Override
+	public List<YPolicyVO> all() {
+		return my.selectList("yp.allList");
+	}
+	
 	@Override
 	public List<YPolicyVO> selectOne(String YP_CATEGORY) {
 		// select YP_CATEGORY, YP_NAME, YP_PI from YP where YP_CATEGORY = #{YP_CATEGORY}
@@ -60,6 +68,11 @@ public class YPolicyDAOImpl implements YPolicyDAOInterface {
 	@Override
 	public int count() {
 		return my.selectOne("yp.count");
+	}
+	
+	@Override
+	public List<YPolicyVO> ypRecommend(YPolicyVO vo){
+		return my.selectList("yp.ypRecommend", vo);
 	}
 
 }
