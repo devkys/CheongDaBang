@@ -1,9 +1,25 @@
 @charset "UTF-8";
 
-        body {background: #b3e5fc;}
-        #wrap {}
+        #wrap {
+            width: 1400px;
+            margin: 0 auto;
+        }
         #header {}
         #nav {}
-        #content_bbs {}
+        #content1 {
+            width: 600px;
+            float: left;
+            
+        }
+        #content2{
+        	width: 700px;
+         	float: right;
+        }
+     
+        #content3{
+        }
+        #content_bbs { 
+        
+ }
         #content_news {}
         #footer {}

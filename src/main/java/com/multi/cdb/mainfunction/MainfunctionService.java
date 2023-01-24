@@ -4,12 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.multi.cdb.bbs.BbsVO;
 import com.multi.cdb.bbs.BbsfilterVO;
 import com.multi.cdb.bbs.NewsVO;
 import com.multi.cdb.bbs.NewsfilterVO;
+import com.multi.cdb.job.JobVO;
 import com.multi.cdb.yPolicy.YPolicyVO;
 
 @Service
@@ -32,13 +32,19 @@ public class MainfunctionService {
 		return dao.newslist();
 	}
 
+	// 일자리 메인노출
+	public List<JobVO> joblist() {
+		return dao.joblist();
+	}
+
 	// 뉴스 검색
 	public List<NewsfilterVO> newsfilter(NewsfilterVO vo) {
 		return dao.newsfilter(vo);
 	}
-	
-	//정책 모아보기
+
+	// 정책 모아보기
 	public List<YPolicyVO> YPlist() {
 		return dao.YPlist();
 	}
+
 }
