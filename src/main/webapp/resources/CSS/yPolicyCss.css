@@ -1,27 +1,174 @@
 @charset "UTF-8";
 
-.PolicyTab {
-	background-color : white;
+a {
+	text-decoration: none;
+}
+
+a.AllPolicyBtn {
+	color: white;
+}
+
+h3 {
+	text-align: center;
+	color: #0086E5;
+	font-weight: bold;
+}
+
+/* 카드형 정책 리스트 */
+* {
+	box-sizing: border-box;
+}
+
+.policyCardList {
+	float: left;
+	width: 25%;
+	height: 20%;
+	padding: 10px 10px;
+}
+
+.policyCardList .policyCardList-body {
+	padding: 16px;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	/* text-overflow: ellipsis; 말줄임 효과 width 백분율이라 적용안됨 */
+	border: dotted;
+	border-color: #3981E5;
+	border-radius: 30px;
+}
+
+#result {
+	margin: 0 -5px;
+}
+
+#result:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media screen and (max-width: 600px) {
+	.policyCardList {
+		width: 50%;
+		display: block;
+		margin-bottom: 20px;
+	}
+}
+
+.policyCardList .policyCardList-body h1 {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #215aaf;
+}
+
+.policyCardList .policyCardList-body p {
+	font-size: 18px;
+	margin-bottom: 3px;
+}
+
+.policyCardList-body:hover {
+	transform: translateY(5px);
+}
+
+/* 정책검색박스 */
+#searchDiv {
+	background-color: white;
 	border: 2px solid #3981E5;
-	color: black;
+	border-radius: 30px;
+	width: 100%;
+	text-align: center;
+}
+
+/* 정책유형별 버튼 */
+.PolicyTab {
+	color: white;
 	height: 50px;
 	padding: 20px;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
 	border-radius: 12px;
+	border: none;
 	font-size: 16px;
 	margin-left: 30px;
 	margin-right: 30px;
 	cursor: pointer;
-	background-color: white;
+	background-color: #3981E5;
 }
 
 .PolicyTab:hover {
-	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 5px 0
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 5px 10px 0
 		rgba(0, 0, 0, 0.19);
 }
 
-.PolicyTabDiv{
+.form-select{
+	width: 600px;
+	display: inline-block;
+	
+}
+
+/* 정책유형 박스 */
+.PolicyTabDiv {
 	text-align: center;
+	vertical-align:middle;
+}
+
+/* 페이지버튼 */
+div.paging{
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	margin-top: 20px;
+	justify-content: center;
+}
+
+div.paging>i, div.paging>div.pages{
+	margin: 0 10px;
+}
+
+div.paging>i, div.paging>div.pages>span{
+	margin: 0 3px;
+	cursor: pointer;
+}
+
+span.ac:active {
+	color: #3981E5;
+	font-weight: bold;
+}
+
+/* 정책추천 관련 css */
+#recommendDiv{
+	background-color: white;
+	border: 2px solid #3981E5;
+	border-radius: 30px;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+}
+
+/* 버튼 */
+.recommendBtn {
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:10px 16px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528ecc;
+}
+.recommendBtn:hover {
+	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background-color:#378de5;
+}
+.recommendBtn:active {
+	position:relative;
+	top:1px;
 }

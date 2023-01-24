@@ -2,13 +2,18 @@ package com.multi.cdb.yPolicy;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 public interface YPolicyServiceInterface {
 	// 삽입
 	public void insert(YPolicyVO vo);
 
-	// 전체 정책 목록
-	public List<YPolicyVO> YpList(PageVO vo);
+	// 전체 정책 목록 with paging
+	public List<YPolicyVO> YpList(CriteriaYP cri);
 	
+	// 전체 정책 목록
+	public List<YPolicyVO> all();
+
 	// 상세검색
 	public List<YPolicyVO> search(YPolicyVO vo);
 
@@ -23,4 +28,7 @@ public interface YPolicyServiceInterface {
 	
 	// 페이지 카운트
 	public int count();
+	
+	// 정책 추천
+	public List<YPolicyVO> ypRecommend(YPolicyVO vo);
 }

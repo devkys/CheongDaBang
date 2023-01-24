@@ -8,22 +8,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="../resources/css/yPolicyCss.css" />
 <script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
-<script>
-	/* 로그인 여부 */
-	$(document).ready(function() {
-		if ("${member_id}" === '') {
-			$(".sign-in").css("visibility", "visible");
-			$(".sign-up").css("visibility", "visible");
-			$(".sign-out").css("visibility", "hidden");
-			$(".mypage").css("visibility", "hidden");
-		} else {
-			$(".sign-in").css("visibility", "hidden");
-			$(".sign-up").css("visibility", "hidden");
-			$("sign-out").css("visibility", "visible");
-			$("mypage").css("visibility", "visible");
-		}
-	})
-</script>
+
 <style>
 #d1 {
 	width: 100%;

@@ -9,8 +9,11 @@ public interface YPolicyDAOInterface {
 	// 상세검색
 	public List<YPolicyVO> search(YPolicyVO vo);
 
+	// 전체 리스트 with paging
+	public List<YPolicyVO> YpList(CriteriaYP cri);
+	
 	// 전체 리스트
-	public List<YPolicyVO> YpList(PageVO vo);
+	public List<YPolicyVO> all();
 	
 	// 유형별 리스트
 	public List<YPolicyVO> selectOne(String YP_CATEGORY);
@@ -24,7 +27,7 @@ public interface YPolicyDAOInterface {
 	// 페이지 카운트
 	public int count();
 	
-	// 스크랩 기능
-	//public void scrap(YPolicyVO vo);
+	// 정책 추천
+	public List<YPolicyVO> ypRecommend(YPolicyVO vo);
 
 }

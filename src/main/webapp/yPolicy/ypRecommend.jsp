@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,24 +13,13 @@
 <script src="https://kit.fontawesome.com/4e0c810bcc.js"
 	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="../resources/css/yPolicyCss.css" />
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
 <script type="text/javascript">
-	/* 로그인 여부 */
-	$(document).ready(function() {
-		if ("${member_id}" === '') {
-			$(".sign-in").css("visibility", "visible");
-			$(".sign-up").css("visibility", "visible");
-			$(".sign-out").css("visibility", "hidden");
-			$(".mypage").css("visibility", "hidden");
-		} else {
-			$(".sign-in").css("visibility", "hidden");
-			$(".sign-up").css("visibility", "hidden");
-			$("sign-out").css("visibility", "visible");
-			$("mypage").css("visibility", "visible");
-		}
-	})
+	
 	$(function() {
 		$('#b').on("click", function() {
 			$.ajax({
@@ -58,7 +49,7 @@ h2 {
 </head>
 <body>
 	<%@include file="/WEB-INF/views/includes/header.jsp"%>
-	<div id="recommendDiv">
+	<div id="recommendDiv"style="height: auto; min-height:100%; padding-bottom:50px;">
 	<h2 style="color: #3981E5; font-weight: bold;">나에게 맞는 정책 찾기</h2>
 	<hr>
 		<div id="recommend">
