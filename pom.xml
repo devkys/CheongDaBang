@@ -14,6 +14,16 @@
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
+	
+	
+	<repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+	
+	
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -33,7 +43,7 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 			<groupId>org.json</groupId>
@@ -171,7 +181,7 @@
 			<version>1.18.10</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -185,8 +195,8 @@
 			<artifactId>json-simple</artifactId>
 			<version>1.1</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
@@ -198,6 +208,25 @@
 			<artifactId>imgscalr-lib</artifactId>
 			<version>4.2</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>1.9.1.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.github.shin285</groupId>
+			<artifactId>KOMORAN</artifactId>
+			<version>3.3.4</version>
+		</dependency>
+		
 		
 	</dependencies>
 	<build>

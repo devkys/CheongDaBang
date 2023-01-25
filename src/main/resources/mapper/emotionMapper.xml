@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emotion">
+
+
+	<select id="title">
+		SELECT emotion.*, yp.YP_NAME
+		from emotion left join yp
+		on emotion.yp_numfk = yp.YP_ID
+		order by emotion.`sequence
+	</select>
+
+	<select id="sel_jumsu" parameterType="string" resultType="int">
+		select total_sum from total_e_jumsu where yp_numfk=#{yp_numfk}
+	</select>	
+	
+	<insert id="jumsu_insert">
+		insert into total_e_jumsu values  (null, #{yp_numfk}, #{total_sum})
+	</insert>
+	
+	<update id="jumsu_update">
+		update total_e_jumsu set total_sum=(total_sum+#{total_sum}) where yp_numfk=#{yp_numfk}
+	</update>
+	
+	<select id="jumsu_count" parameterType="string" resultType="int">
+		select count(*) from total_e_jumsu where yp_numfk = #{yp_numfk}
+	</select>	
+</mapper>

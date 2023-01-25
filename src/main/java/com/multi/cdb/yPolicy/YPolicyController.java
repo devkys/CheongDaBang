@@ -77,5 +77,7 @@ public class YPolicyController {
 		System.out.println(list);
 		model.addAttribute("list", list);
 	}
+	
+	
 
 }

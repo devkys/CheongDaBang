@@ -16,11 +16,13 @@
 		<typeAlias type="com.multi.cdb.bbs.NewsVO" alias="newsVO" />
 		<typeAlias type="com.multi.cdb.bbs.RecommendVO" alias="recommendVO" />
 		<typeAlias type="com.multi.cdb.bbs.ReplyVO" alias="replyVO" />
-      		<typeAlias type="com.multi.cdb.bbs.BbsfilterVO" alias="BbsfilterVO" />
-      		<typeAlias type="com.multi.cdb.bbs.NewsfilterVO" alias="NewsfilterVO" />
-      		<typeAlias type="com.multi.cdb.job.JobVO" alias="jobVO"/>
-      		<typeAlias type="com.multi.cdb.mainfunction.filtertextVO" alias="filtertextVO"></typeAlias>
-		<typeAlias type="com.multi.cdb.bbs.BbsPageVO" alias="bbsPageVO"></typeAlias>
+      	<typeAlias type="com.multi.cdb.bbs.BbsfilterVO" alias="BbsfilterVO" />
+      	<typeAlias type="com.multi.cdb.bbs.NewsfilterVO" alias="NewsfilterVO" />
+      	<typeAlias type="com.multi.cdb.job.JobVO" alias="jobVO"/>
+      	<typeAlias type="com.multi.cdb.mainfunction.filtertextVO" alias="filtertextVO" />
+		<typeAlias type="com.multi.cdb.bbs.BbsPageVO" alias="bbsPageVO"/>
+		<typeAlias type="com.multi.cdb.emotion.DictionaryVO" alias="dictionaryVO"/>
+		<typeAlias type="com.multi.cdb.emotion.EmotionVO" alias="emotionVO"/>
    </typeAliases>
 
 	<mappers>
@@ -35,6 +37,7 @@
 		<mapper resource="mapper/replyMapper.xml" /> 
 		<mapper resource="mapper/scrapMapper.xml" />
    		<mapper resource="mapper/yPolicyMapper.xml" />
+   		<mapper resource="mapper/emotionMapper.xml" />
 	</mappers>
 </configuration>
 

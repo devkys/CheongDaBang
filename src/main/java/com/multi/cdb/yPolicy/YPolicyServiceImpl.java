@@ -60,4 +60,9 @@ public class YPolicyServiceImpl implements YPolicyServiceInterface {
 	public List<YPolicyVO> ypRecommend(YPolicyVO vo){
 		return dao.ypRecommend(vo);
 	}
+	
+	@Override
+	public List<YPolicyVO> selectId(String YP_ID) {
+		return dao.selectId(YP_ID);
+	}
 }

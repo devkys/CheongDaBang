@@ -74,5 +74,10 @@ public class YPolicyDAOImpl implements YPolicyDAOInterface {
 	public List<YPolicyVO> ypRecommend(YPolicyVO vo){
 		return my.selectList("yp.ypRecommend", vo);
 	}
+	
+	@Override
+	public List<YPolicyVO> selectId(String YP_ID) {
+		return my.selectList("yp.selectId", YP_ID);
+	}
 
 }
