@@ -19,7 +19,7 @@
 	</update>
 	<!-- d는 id에 맞는 게시물 삭제 -->
 	<delete id="del" parameterType="replyVO">
-		delete from reply where reply_id = #{reply_id}
+		delete from reply where reply_id = #{reply_id} and member_id = #{member_id}
 	</delete>
 </mapper>
 
