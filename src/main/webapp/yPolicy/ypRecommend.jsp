@@ -49,7 +49,7 @@ h2 {
 </head>
 <body>
 	<%@include file="/WEB-INF/views/includes/header.jsp"%>
-	<div id="recommendDiv"style="height: auto; min-height:100%; padding-bottom:50px;">
+	<div id="recommendDiv" style="height: auto; min-height:100%; padding-bottom:50px;">
 	<h2 style="color: #3981E5; font-weight: bold;">나에게 맞는 정책 찾기</h2>
 	<hr>
 		<div id="recommend">

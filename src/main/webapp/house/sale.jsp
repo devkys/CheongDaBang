@@ -7,16 +7,18 @@
 <head>
 <meta charset="UTF-8">
 <title>청 다 방</title>
+
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-	<link rel="stylesheet" href="${path}/resources/css/header.css">
-<link rel="stylesheet" href="${path}/resources/css/footer.css">
+
 <script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 
 <script>
@@ -146,13 +148,13 @@ area:hover {
 <body>
 <%@include file="/WEB-INF/views/includes/header.jsp" %>
 	<div class='total' style="height: auto; min-height: 100%; padding-bottom:50px;">
-	<button id='btn'>전국 검색</button>
-	<br>
+	<h2 style="text-align: center;">공공 <b>분양</b> 주택 찾기</h2>
 	
-	<div class='map-img'>
+	<div class='map-img' style="margin-bottom: 30px; text-align: center;">
 	<img src="../resources/img/t_map.png" usemap='#brt_map' id="brt_map">
 	</div>	
 	
+	<button id='btn' type="button" class="btn btn-outline-secondary" style="display: block; margin: auto; margin-bottom: 30px;">전국 검색</button>
 	
 	<map name="brt_map">
 	<!--  coords= x1, y1, x2, y2 -->

@@ -9,52 +9,61 @@
 <meta charset="UTF-8">
 
 <title>청 다 방</title>
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="${path}/resources/css/header.css">
-<link rel="stylesheet" href="${path}/resources/css/footer.css">
-<!-- <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> -->
-	
 <script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!--  services와 cluster, drawing 라이브러리 불러오기 -->
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a5f34071e5fda04f41cf6edf0c5fd1b&libraries=services,clusterer,drawing"></script>
 <script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
-</head>
 <style>
-.btn {
-	background-color: lightgray;
+a {
+	text-decoration: none;
 }
 
-.btn:hover {
-	background-color: gray;
+
+#map {
+  width : 800px;
+  height : 400px;
+  top: 50%;
+  left: 25%; 
+}
+
+.info {
+	padding-left: 20px;
 }
 </style>
+</head>
+
 <body>
 <%@include file="../includes/header.jsp" %>
 <div style="height: auto; min-height: 100%; padding-bottom:50px;">
+	<h2 style="text-align: center;">입주자 모집공고</h2>
 	<hr>
-	<h2>입주자 모집공고</h2>
-	<hr>
-	<h3 class='title'>${list[0].br_pbname}</h3>
-	<span style="font-weight: bold; font-size: 25px;">총 <span
-		style="color: red;">${list.size()}</span> 개의 단지 정보가 있습니다.
+	<h3 class='title' style="text-align: center;">${list[0].br_pbname}</h3>
+	<span style="font-weight: bold; font-size: 25px;">총 <b
+		style="color: red;">${list.size()}</b> 개의 단지 정보가 있습니다.
 	</span>
+	
+<div class="info">
 	<br> ${list[0].br_housetype}
 	<br> ${list[0].br_suplyint}
 	<br> ${list[0].br_refrnc}
 	<br> ${list[0].br_suplytype}
-	<br>
-
 	<span class="brtc">${list[0].br_brtc}</span>
+	<br>
+</div>
 	<table class="table" id="tt">
 		<thead style="background-color: lightgray;">
 			<tr>
-				<th>시군구</th>
+				<th colspan="1">시군구</th>
 				<th>위치</th>
 				<th>단지 명</th>
 				<th>공급호수</th>
@@ -75,7 +84,7 @@
 					<td id="signgu"><c:out value="${vo.br_signgu}" /></td>
 					<!-- 지도로 보기 -->
 					<td><c:out value="${vo.br_fulladdr}" />
-					<button class='btn' value="${vo.br_fulladdr}">지도로 보기</button></td>
+					<button class='btn btn-outline-info' value="${vo.br_fulladdr}">지도로 보기</button></td>
 					<td><c:out value="${vo.br_hsmp}" /></td>
 					<td><c:out value="${vo.br_sumsuplyco}" /></td>
 					<td><a href="${vo.br_url}" target="_blank"><c:out value="해당 모집공고 가기" /></a></td>
@@ -88,14 +97,14 @@
 							pattern="yyyy-MM-dd" /></td>
 					<td><fmt:formatDate value="${vo.br_winannde}"
 							pattern="yyyy-MM-dd" /></td>
-					<td><button class="scr">스크랩</button></td>
+					<td><button type="button" class="scr btn btn-outline-primary">스크랩</button></td>
 				</tr>
 			</tbody>
 		</c:forEach>
 	</table>
 	
 	
-	<div id="map" style="width: 800px; height: 400px;"></div>
+	<div id="map"></div>
 	</div>
 	<%@include file="../includes/footer.jsp" %>
 

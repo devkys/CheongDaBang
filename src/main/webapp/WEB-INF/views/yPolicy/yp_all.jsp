@@ -13,7 +13,7 @@
 	rel="stylesheet">
 <script src="https://kit.fontawesome.com/4e0c810bcc.js"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="${path}/resources/css/yPolicyCss.css" />
+<link rel="stylesheet" href="../resources/css/yPolicyCss.css" />
 <link rel="stylesheet" href="${path}/resources/css/header.css">
 <link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script
@@ -58,6 +58,7 @@
 <body>
 	<%@include file="../includes/header.jsp"%>
 	<br>
+	<div style="height: auto; min-height:100%; padding-bottom:50px;">
 	<div id="searchDiv">
 		<h3>정책검색</h3>
 		<!-- 정책명 -->
@@ -67,9 +68,9 @@
 			<button class="btn btn-outline-primary" type="submit" id='b2'>검색</button>
 		</div>
 		<!-- 정책유형 -->
-		<label class="searchLabel">정책유형</label>
+		<label class="searchLabel" style="font-weight: bold; color: #0086E5;">정책유형</label>
 		<div style="text-align: center;">
-			<input type='radio' class="form-ch/eck-input" name='YP_CATEGORY'
+			<input type='radio' class="form-check-input" name='YP_CATEGORY'
 				value='생활·복지'>생활·복지 <input type='radio'
 				class="form-check-input" name='YP_CATEGORY' value='정책참여'>정책참여
 			<input type='radio' class="form-check-input" name='YP_CATEGORY'
@@ -80,8 +81,9 @@
 				class="form-check-input" name='YP_CATEGORY' value='코로나19'>코로나19
 		</div>
 		<!-- 지역 -->
-		<label class="searchLabel">지역</label><br> <select
-			class="form-select" id="YP_REGION" name="YP_REGION">
+		<label class="searchLabel" style="font-weight: bold; color: #0086E5;">지역</label>
+		<br> 
+		<select class="form-select" id="YP_REGION" name="YP_REGION">
 			<option value='중앙부처'>중앙부처</option>
 			<option value='서울'>서울</option>
 			<option value='부산'>부산</option>
@@ -118,17 +120,17 @@
 	<hr>
 	<div id="result">
 		<br>
-			<c:forEach items="${list}" var="vo">
-				<div class="policyCardList">
-					<div class="policyCardList-body">
-						<h1>${vo.YP_CATEGORY}</h1>
-						<p>
-							<a href="detailOne?YP_NAME=${vo.YP_NAME}&YP_VIEW=${vo.YP_VIEW}">${vo.YP_NAME}</a>
-						</p>
-						<p>${vo.YP_PI}</p>
-					</div>
+		<c:forEach items="${list}" var="vo">
+			<div class="policyCardList">
+				<div class="policyCardList-body">
+					<h1>${vo.YP_CATEGORY}</h1>
+					<p>
+						<a href="detailOne?YP_NAME=${vo.YP_NAME}&YP_VIEW=${vo.YP_VIEW}">${vo.YP_NAME}</a>
+					</p>
+					<p>${vo.YP_PI}</p>
 				</div>
-			</c:forEach>
+			</div>
+		</c:forEach>
 	</div>
 	<div id="pageButton" style="text-align: center; display: inline-block;">
 		<nav aria-label="Page navigation example">
@@ -152,6 +154,7 @@
 				</c:if>
 			</ul>
 		</nav>
+	</div>
 	</div>
 	<%@include file="../includes/footer.jsp"%>
 </body>

@@ -16,14 +16,17 @@
 <link rel="stylesheet" href="${path}/resources/css/footer.css">
 <script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 
 
 <style>
-/* a {
+
+a {
 	text-decoration: none;
 	color: black;
-} */
+}
 a:hover {
 	font-weight: bold;	
 }
@@ -32,45 +35,51 @@ area:hover {
 	cursor: pointer;	
 }
 
-/* #paging ul {
-    text-align: center;
-    display: inline-block;
-    
-    border-right: 0;
-    list-style: none;
-}
-#paging ul li {
-    text-align: center;
-    float: left;
+#paging {
+	text-align: center;
+	display: inline-block; 
+	border-right: 0; 
+	list-style: none;
+	padding-left: 0;
+	align-items: center;
 }
 
-#paging ul li a {
+#paging li {
+    text-align: center;
+ 	float: left; 
+}
+#paging li > a {
     display: block;
     font-size: 14px;
     padding: 9px 12px;
     box-sizing: border-box;
 }
 
-#paging ul li.on {
+#paging  li.on {
     background: #A9A9A9;
 }
 
-#paging ul li.on a {
+#paging li.on>  a {
     color: #fff;
-} */
-
+} 
+.page_f {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 </style>
 </head>
 <body>
 <%@include file="/WEB-INF/views/includes/header.jsp" %>
 	<div class='total' style="height: auto; min-height:100%; padding-bottom:50px;">
-	<button id='btn'>전국 검색</button>
-	<br>
-	
-	<div class='map-img'>
+	<h2 style="text-align: center;">공공 <b>임대</b> 주택 찾기</h2>
+
+	<div class='map-img' style="margin-bottom: 30px; text-align: center;">
 	<img src="../resources/img/t_map.png" usemap='#brt_map' id='brt_map'>
 	</div>	
-	
+
+	<button id='btn' type="button" class="btn btn-outline-secondary" style="display: block; margin: auto; margin-bottom: 30px;">전국 검색</button>
+
 	<map name="brt_map">
 	<!--  coords= x1, y1, x2, y2 -->
 		<area id="1" shape="poly" coords="110,122,139,111,173,129,172,146,146,149,118,144" alt='Seoul' title="서울특별시" onclick="brt_map.src='../resources/img/seoul.png'">
@@ -110,8 +119,10 @@ area:hover {
 			</tbody>
 		</table>
 	</div>
+	<div class="page_f">
 	<div id="displayCount"></div>
 	<ul id="paging"></ul>
+	</div>
 	</div>
 <%@include file="/WEB-INF/views/includes/footer.jsp" %>
 <script>
@@ -253,9 +264,9 @@ area:hover {
 		$('#tbody').empty();
 		$('#tbody').append(charHtml);
 	}
-
-	// 광역시도별 검색 (지도 클릭시 구현)
+		
 	$(function() {
+		// 자바스크립트 객체
 		const obj = {
 				1: '서울특별시',
 				2: '인천광역시',
@@ -275,6 +286,9 @@ area:hover {
 				16: '부산광역시',
 				17: '제주특별자치도'
 		}
+		
+		// ajax로 요청 파라미터를 태워서 보냄
+		// 광역시도별 검색 (지도 클릭시 구현)
 		$("area").click(function() {
 			var id = $(this).attr('id');
 			$("#tbody").empty();
@@ -285,13 +299,6 @@ area:hover {
 				type : "GET",
 				data: {},
 				success : function(data) {
-					/*$('#tbody').empty()
-					totalData = data.length;
-					globalData = data;
-					displayData(1, dataPerPage, data); */
-				
-					/* paging(totalData, dataPerPage, pageCount, 1); */
-					
 					$.each(data,function(index,value) {
 						var insertTr = "";
 						insertTr += "<tr>";

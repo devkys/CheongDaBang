@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class BorrowController {
 	
 	@Autowired
-	BorrowServiceInterface bo_service;
+	BorrowServiceInterface bo_service; // 서비스단 싱글톤으로 호출 
 	
 	// 쿼리 파라미터를 광역시로 요청함.
 	@RequestMapping(value = "/rent_city", method = { RequestMethod.GET })
-	@ResponseBody
+	@ResponseBody // jackson lib를 이용하여 list를 json으로 변환하여 전
 	public Object sel_list(@RequestParam("br_brtc") String br_brtc) {
 		List<BorrowVO> list = bo_service.city(br_brtc);
 		return list;

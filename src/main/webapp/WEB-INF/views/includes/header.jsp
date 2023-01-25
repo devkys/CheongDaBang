@@ -59,12 +59,12 @@ $(document).ready(function() {
 		</div>
 
 		<!--가로형 3단 드롭다운 메뉴-->
-		<div id="menu" style="margin-bottom: 70px;">
+		<div id="menu" style="margin-bottom: 40px;">
 			<ul class="main1">
 				<li><a href="/cdb/yPolicy/yp_all">청년 정책</a>
 					<ul class="main2">
 						<li><a href="/cdb/yPolicy/yp_all">전체 청년 정책</a></li>
-						<li><a href="#">맞춤 청년 정책</a></li>
+						<li><a href="/cdb/yPolicy/ypRecommend.jsp">맞춤 청년 정책</a></li>
 					</ul>
 				</li>
 				<li><a href="/cdb/house/rent.jsp">공공 주택 찾기</a>

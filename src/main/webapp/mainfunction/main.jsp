@@ -20,6 +20,7 @@
 <!-- Bootstrap CSS -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	$(function() {
 		$.ajax({
