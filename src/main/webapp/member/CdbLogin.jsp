@@ -36,7 +36,7 @@ $(function() {
 </head>
 <body>
 	<div class="header">
-		<a href="www.google.com"><img src="../resources/img/chdabang.png"></a>
+		<a href="../mainfunction/main.jsp"><img src="../resources/img/chdabang.png"></a>
 		<h2>청다방 로그인 하기</h2>
 	</div>
 	<div class="find">
