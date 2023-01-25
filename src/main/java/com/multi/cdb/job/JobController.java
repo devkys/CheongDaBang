@@ -17,6 +17,7 @@ public class JobController {
 	GetApiData getApiData;
 	@Autowired
 	GetApiDataYouth getApiDataYouth;
+	
 	@Autowired
 	PageService page;
 

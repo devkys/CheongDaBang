@@ -1,10 +1,19 @@
 package com.multi.cdb.scrap;
 
 public class ScrapVO {
+	String scrap_num;
 	String scrap_title;
 	String scrap_link;
 	String scrap_type;
 	String scrap_member;
+
+	public String getScrap_num() {
+		return scrap_num;
+	}
+
+	public void setScrap_num(String scrap_num) {
+		this.scrap_num = scrap_num;
+	}
 
 	public String getScrap_title() {
 		return scrap_title;
@@ -40,8 +49,8 @@ public class ScrapVO {
 
 	@Override
 	public String toString() {
-		return "ScrapVO [scrap_title=" + scrap_title + ", scrap_link=" + scrap_link + ", scrap_type=" + scrap_type
-				+ ", scrap_member=" + scrap_member + "]";
+		return "ScrapVO [scrap_num=" + scrap_num + ", scrap_title=" + scrap_title + ", scrap_link=" + scrap_link
+				+ ", scrap_type=" + scrap_type + ", scrap_member=" + scrap_member + "]";
 	}
 
 }
