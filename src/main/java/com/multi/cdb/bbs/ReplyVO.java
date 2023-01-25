@@ -2,10 +2,10 @@ package com.multi.cdb.bbs;
 
 public class ReplyVO {
 	
-	int reply_id;
-	String member_id;
-	String reply_contents;
-	int bbs_Id;
+	private int reply_id;
+	private String member_id;
+	private String reply_contents;
+	private int bbs_Id;
 	public int getReply_id() {
 		return reply_id;
 	}
