@@ -25,6 +25,15 @@
 		where title like
 		concat('%',#{filtertext},'%')
 	</select>
+	
+	<!-- 정색 검색 필터 제목 -->
+	<select id="ypfilter" parameterType="YPolicyfilterVO"
+		resultType="YPolicyfilterVO">
+		SELECT * FROM yp
+		where YP_NAME like
+		concat('%',#{filtertext},'%')
+		order by YP_VIEW desc
+	</select>
 
 	<!-- 메인페이지 추천수에 따른 게시물 노출 -->
 	<select id="bbslist" resultType="BbsVO">

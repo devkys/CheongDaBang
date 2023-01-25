@@ -9,28 +9,28 @@
     <tr>
     	<td><h4>인기정책</h4></td>
     </tr>
-	<tr class="table-secondary">
+	<tr>
 		<c:forEach items="${list}" var="one" begin="0" end="3" step="1"
 			varStatus="status">
 			<td>${one.YP_NAME} <br>조회 : ${one.YP_VIEW}<br>
 			<a
-				href="정책 변경값?YP_URL=${one.YP_URL}">이동하기</a>
-			</td>
+			href="/cdb/yPolicy/detailOne?YP_NAME=${one.YP_NAME}"
+				style="font-weight: bold; align: right;">이동하기</a>
 		</c:forEach>
 	</tr>
 	<tr class="table-secondary">
 		<c:forEach items="${list}" var="one" begin="4" end="7" step="1"
 			varStatus="status">
 			<td>${one.YP_NAME} <br>조회 : ${one.YP_VIEW}<br><a
-				href="정책 변경값?YP_URL=${one.YP_URL}">이동하기</a>
-			</td>
+				href="/cdb/yPolicy/detailOne?YP_NAME=${one.YP_NAME}"
+				style="font-weight: bold; align: right;">이동하기</a>
 		</c:forEach>
 	</tr>
-	<tr class="table-secondary">
+	<tr>
 		<c:forEach items="${list}" var="one" begin="8" end="11" step="1"
 			varStatus="status">
 			<td>${one.YP_NAME} <br>조회 : ${one.YP_VIEW}<br><a
-				href="정책 변경값?YP_URL=${one.YP_URL}"
+				href="/cdb/yPolicy/detailOne?YP_NAME=${one.YP_NAME}"
 				style="font-weight: bold; align: right;">이동하기</a>
 			</td>
 		</c:forEach>

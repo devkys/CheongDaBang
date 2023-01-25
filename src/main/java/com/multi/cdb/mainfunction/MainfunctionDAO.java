@@ -12,6 +12,7 @@ import com.multi.cdb.bbs.NewsVO;
 import com.multi.cdb.bbs.NewsfilterVO;
 import com.multi.cdb.job.JobVO;
 import com.multi.cdb.yPolicy.YPolicyVO;
+import com.multi.cdb.yPolicy.YPolicyfilterVO;
 
 @Repository
 public class MainfunctionDAO {
@@ -26,7 +27,7 @@ public class MainfunctionDAO {
 
 	// 게시물 검색
 	public List<BbsfilterVO> bbsfilter(BbsfilterVO vo) {
-		System.out.println("키워드값 테스트 : " + vo.getFiltertext());
+		System.out.println("bbsfilter키워드값 테스트 : " + vo.getFiltertext());
 		return my.selectList("function.bbsfilter", vo);
 	}
 
@@ -42,10 +43,16 @@ public class MainfunctionDAO {
 
 	// 뉴스 제목 검색
 	public List<NewsfilterVO> newsfilter(NewsfilterVO vo) {
-		System.out.println("키워드값 테스트 : " + vo.getFiltertext());
+		System.out.println("newsfilter키워드값 테스트 : " + vo.getFiltertext());
 		return my.selectList("function.newsfilter", vo);
 	}
-
+	
+	//정책 검색
+	public List<YPolicyfilterVO> ypfilter(YPolicyfilterVO vo) {
+		System.out.println("ypfilter키워드값 테스트 : " + vo.getFiltertext());
+		return my.selectList("function.ypfilter", vo);
+	}
+	
 	// 정책 모아보기
 	public List<YPolicyVO> YPlist() {
 		return my.selectList("function.YPlist");
@@ -60,10 +67,16 @@ public class MainfunctionDAO {
 	public void textinsert(NewsfilterVO vo) {
 		my.selectOne("function.textcreate", vo);
 	}
-
+	
+	// 검색어 저장
+		public void textinsert(YPolicyfilterVO vo) {
+			my.selectOne("function.textcreate", vo);
+		}
 	// 검색어 순위
 	public List<filtertextVO> textrank() {
 		return my.selectList("function.textranknum");
 	}
+	
+	
 
 }

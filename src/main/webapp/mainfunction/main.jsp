@@ -108,8 +108,7 @@
 				<div id="d4"></div>
 			</div>
 		</div>
-		<div id="footer">배너</div>
-		<!-- 배너 -->
+		
 	</div>
 
 	<%@include file="/WEB-INF/views/includes/footer.jsp"%>

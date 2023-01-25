@@ -38,6 +38,7 @@
 				<h2>관련 사이트</h2>
 			</div>
 			<select onchange="window.open(this.value);" class="drop_down">
+				<option value="none">이동</option>
 				<option value="https://www.youthcenter.go.kr/opi/openApiIntro.do">온라인
 					청년 오픈 API</option>
 				<option value="https://www.data.go.kr/">공공 데이터 포털 오픈 API</option>

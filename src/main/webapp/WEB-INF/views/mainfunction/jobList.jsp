@@ -13,7 +13,8 @@ pageEncoding="UTF-8"%>
 		<td>마감일자</td>
 	</tr>
 	<c:forEach items="${list}" var="one">
-		<tr>
+		
+		<tr onclick="location.href='/cdb/job/one?job_wantedAuthNo=${one.job_wantedAuthNo}'">
 			<td width="80">${one.job_company}</td>
 			<td width="150">${one.job_title}</td>
 			<td width="80">${one.job_region}</td>
@@ -21,5 +22,6 @@ pageEncoding="UTF-8"%>
 			<td width="80">${one.job_regDt}</td>
 			<td width="80">${one.job_closeDt}</td>
 		</tr>
+		
 	</c:forEach>
 </table>
