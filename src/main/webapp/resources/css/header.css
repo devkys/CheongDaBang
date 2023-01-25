@@ -30,11 +30,13 @@ header {
     width: 500px;
     /* margin-top: 20px; */
     /* margin-bottom: 15px; */
+    
 }
+
 
 .search input {
     border-radius: 2rem;
-    width: 100%;
+    width: 380px;
     height: 40px;
     border-color: #0081C9;
     border-width: 1.5px;
@@ -42,7 +44,6 @@ header {
     font-size: medium;
     padding-left: .5rem;
 }
-
 .search input:focus {
     outline: none;
 }

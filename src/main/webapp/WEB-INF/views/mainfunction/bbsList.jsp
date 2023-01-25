@@ -14,7 +14,7 @@
 		<c:set var="i" value="${i+1}" />
 		<tr>
 			<td width="70">${i}</td>
-			<td><a href="bbsOne?bbs_id=${one.bbs_id}">${one.bbs_title}</a></td>
+			<td><a href="/cdb/bbs/bbs_contents?bbs_Id=${one.bbs_Id}">${one.bbs_title}</a></td>
 			<td width="100">${one.member_id}</td>
 			<td width="100">${one.c}</td>
 		</tr>

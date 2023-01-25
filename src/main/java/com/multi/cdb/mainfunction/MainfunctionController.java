@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.multi.cdb.bbs.*;
 import com.multi.cdb.job.JobVO;
 import com.multi.cdb.yPolicy.YPolicyVO;
+import com.multi.cdb.yPolicy.YPolicyfilterVO;
 
 @Controller
 public class MainfunctionController {
@@ -25,24 +26,31 @@ public class MainfunctionController {
 	public void bbsfilter(BbsfilterVO vo, Model model) {
 		List<BbsfilterVO> list1 = mainfunctionService.bbsfilter(vo);
 		model.addAttribute("list1", list1);
-		System.out.println("키워드값 테스트 컨트롤러 : " + vo.getFiltertext());
 		// 검색어 저장
 		dao.textinsert(vo);
 		System.out.println(list1);
-
+		
 	}
 
 	@RequestMapping("mainfunction/newsfilter")
 	public void newsfilter(NewsfilterVO vo, Model model) {
 		List<NewsfilterVO> list2 = mainfunctionService.newsfilter(vo);
 		model.addAttribute("list2", list2);
-		System.out.println("키워드값 테스트 컨트롤러 : " + vo.getFiltertext());
 		// 검색어 저장
 		dao.textinsert(vo);
 		System.out.println(list2);
-
+		
 	}
 
+	@RequestMapping("mainfunction/ypfilter")
+	public void ypfilter(YPolicyfilterVO vo, Model model) {
+		List<YPolicyfilterVO> list2 = mainfunctionService.ypfilter(vo);
+		model.addAttribute("list2", list2);
+		// 검색어 저장
+		dao.textinsert(vo);
+		System.out.println(list2);
+		
+	}
 	// 메인 bbs 리스트
 	@RequestMapping("mainfunction/bbsList")
 	public void bbslist(Model model) {

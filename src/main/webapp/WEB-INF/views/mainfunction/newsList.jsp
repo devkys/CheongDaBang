@@ -15,9 +15,9 @@
 	<c:set var="i" value="${i+1}" />
 		<tr>
 			<td width="70">${i}</td>
-			<td><a href="newsOne?news=${one.no}">${one.title}</a></td>
+			<td><a href="">${one.title}</a></td>
 			<td width="100">${one.category}</td>
-			<td width="100"><fmt:formatDate value="${one.pubdate}" pattern="yyyy-MM-dd" /></td>
+			<td width="100"><fmt:formatDate value="${one.pubDate}" pattern="yyyy-MM-dd" /></td>
 			
 		</tr>
 	</c:forEach>

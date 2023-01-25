@@ -11,6 +11,7 @@ import com.multi.cdb.bbs.NewsVO;
 import com.multi.cdb.bbs.NewsfilterVO;
 import com.multi.cdb.job.JobVO;
 import com.multi.cdb.yPolicy.YPolicyVO;
+import com.multi.cdb.yPolicy.YPolicyfilterVO;
 
 @Service
 public class MainfunctionService {
@@ -45,6 +46,11 @@ public class MainfunctionService {
 	// 정책 모아보기
 	public List<YPolicyVO> YPlist() {
 		return dao.YPlist();
+	}
+	
+	//정책 검색
+	public List<YPolicyfilterVO> ypfilter(YPolicyfilterVO vo) {
+		return dao.ypfilter(vo);
 	}
 
 }
