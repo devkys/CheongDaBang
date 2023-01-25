@@ -20,6 +20,9 @@ public interface YPolicyDAOInterface {
 
 	// 정책상세페이지
 	public List<YPolicyVO> detailOne(String YP_NAME);
+	
+	// 정책 아이디로 리스트 가져오기
+	public List<YPolicyVO> selectId(String YP_ID);
 
 	// 조회수 증가
 	public void viewCount(YPolicyVO vo);

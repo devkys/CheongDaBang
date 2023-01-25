@@ -23,6 +23,8 @@ public interface YPolicyServiceInterface {
 	// 정책상세페이지
 	public List<YPolicyVO> detailOne(String YP_NAME);
 
+	public List<YPolicyVO> selectId(String YP_ID);
+
 	// 조회수 증가
 	public void viewCount(YPolicyVO vo);
 	

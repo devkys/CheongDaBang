@@ -15,7 +15,7 @@
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="../resources/js/jquery-3.6.1.js"></script>
-<script>
+<script type="text/javascript">
 	
 	req = {
 		scrap_title : "${list[0].YP_NAME}",
@@ -54,6 +54,12 @@
 		} //function
 		) // click
 	}) // root function
+	
+	function review(){
+		var yp_id = "${list[0].YP_ID}";
+		var yp_name = "${list[0].YP_NAME}";
+		location.href='/cdb/emotion/review?yp_name=' + yp_name + '&yp_id='  + yp_id;
+	}
 </script>
 <style>
 .detailTitle {
@@ -74,12 +80,17 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+#review {
+	margin: 0px 0px 50px 100px;
+}
 </style>
 <%@include file="../includes/header.jsp"%>
 <br>
 <table class="table" style="table-layout: fixed">
 	<c:forEach items="${list}" var="vo">
 		<h3>${vo.YP_NAME}</h3>
+
 		<tr>
 			<td width="10%" class="detailTitle">정책아이디</td>
 			<td width="50%">${vo.YP_ID}<button id="scrap"
@@ -149,6 +160,11 @@ table {
 		</tr>
 	</c:forEach>
 </table>
+
 <button onclick="history.back()" class="btn btn-outline-secondary"
 	id="back">Back</button>
+
+<button class="btn btn-outline-info" id="review" onclick={review()}>Review</button>
+
+
 <%@include file="../includes/footer.jsp"%>

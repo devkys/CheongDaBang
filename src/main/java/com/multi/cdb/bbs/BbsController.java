@@ -115,7 +115,7 @@ public class BbsController {
 			return "redirect:/bbs/bbs_main.jsp";
 		} catch (Exception e) {
 			// TODO: handle exception
-			return "redirect:/bbs/bbs_main.jsp";
+			return "redirect:/member/CdbLogin.jsp";
 		}
 	
 }
@@ -146,7 +146,7 @@ public class BbsController {
 			model.addAttribute("count", count);
 			return "redirect:/bbs/bbs_contents?bbs_Id="+vo.getBbs_Id();
 		} catch (Exception e) {
-			return "redirect:/bbs/bbs_contents?bbs_Id="+vo.getBbs_Id();
+			return "redirect:/member/CdbLogin.jsp";
 		}
 	}
 
@@ -161,13 +161,15 @@ public class BbsController {
 	}
 
 	
-	@RequestMapping("bbsDel")
-	public void delete(BbsVO vo, Model model) {
+	@RequestMapping("bbs/bbsDel")
+	public String delete(BbsVO vo, Model model) {
 		try {
 			int result = dao.del(vo);
 			model.addAttribute("result", result);
+			return "redirect:/bbs/bbs_main.jsp";
 		} catch (Exception e) {
 			// TODO: handle exception
+			return "redirect:/member/CdbLogin.jsp";
 		}
 	}
 }
