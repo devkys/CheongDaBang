@@ -71,7 +71,7 @@
 	</update>
 	<!-- d는 id에 맞는 게시물 삭제 -->
 	<delete id="del" parameterType="bbsVO">
-		delete from bbs where id = #{id}
+		delete from bbs where bbs_Id = #{bbs_Id} and member_id = #{member_id}
 	</delete>
 </mapper>
 
