@@ -15,9 +15,9 @@
 
 </head>
 <body>
-<h3>추천 게시물</h3>
-<table class="table">
-	<tr>
+<h3 class="text-center">추천 게시물</h3>
+<table class="table" style="width: 80%; margin-left: auto; margin-right: auto">
+	<tr class="table-dark">
 
 		<td>제목</td>
 		<td>작성자</td>
@@ -25,9 +25,8 @@
 		<td>추천 수</td>
 	</tr>
 	<c:forEach var="vo2" items="${list}" >
-	<tr>
-
-		<td><a href="${path}/cdb/bbs/bbs_contents?bbs_Id=${vo2.bbs_Id}"> ${vo2.bbs_title} </a></td>
+	<tr onclick="location. href='${path}/cdb/bbs/bbs_contents?bbs_Id=${vo2.bbs_Id}'" style="cursor:pointer;">
+		<td> ${vo2.bbs_title} </td>
 		<td>${vo2.member_id}</td>
 		<td>${vo2.bbs_contents}</td>
 		<td>${vo2.c}</td>
