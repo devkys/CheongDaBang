@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.MyPageMain{
+	width: 100%;
+	height: 600px;
+}
+.mylist{
+	float: left;
+	border: 2px solid;
+	border-color: #3498DB;
+	width: 100%;
+	height: 500px;
+}
+.head{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+table {
+	font-family: 맑은 고딕;
+	font-size: 20px;
+	width: 100%;
+	border-collapse: collapse;
+	
+}
+table th{
+	border-color: #3498DB;
+	border-width: 2px;
+	font-size: 30px;
+}
+button {
+	background: #3498DB;
+	color: white;
+    border-radius: 0.5rem;
+	padding: 2px;
+}
+.ttt{
+	background-color: white; 
+	border: 0; 
+	cursor:pointer;
+	color: red;
+}
