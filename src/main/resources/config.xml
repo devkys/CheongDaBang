@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
- PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
- "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-	<!-- SQL문 정의할 때 VO표현을 간단하게 하고 싶은 경우. 별명을 지어서 사용 -->
    <typeAliases>
+
     	<typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="yPolicyVO"/>
     	<typeAlias type="com.multi.cdb.yPolicy.PageVO" alias="pageVO" />
 		<typeAlias type="com.multi.cdb.scrap.ScrapVO" alias = "scrapVO" />
@@ -23,6 +23,8 @@
 		<typeAlias type="com.multi.cdb.bbs.BbsPageVO" alias="bbsPageVO"/>
 		<typeAlias type="com.multi.cdb.emotion.DictionaryVO" alias="dictionaryVO"/>
 		<typeAlias type="com.multi.cdb.emotion.EmotionVO" alias="emotionVO"/>
+     <typeAlias type="com.multi.cdb.job.YouthJobVO" alias="youthJobVO"></typeAlias>
+      <typeAlias type="com.multi.cdb.job.PageVO" alias="pageVO2"></typeAlias>
    </typeAliases>
 
 	<mappers>
@@ -39,6 +41,5 @@
    		<mapper resource="mapper/yPolicyMapper.xml" />
    		<mapper resource="mapper/emotionMapper.xml" />
 	</mappers>
+
 </configuration>
-
-
