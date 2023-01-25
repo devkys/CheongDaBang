@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-로그아웃 되었습니다<br>
-<a href="CdbLogin.jsp">로그인 페이지로 가기</a>
+<script type="text/javascript">
+var msg = "${msg}";
+var url = "${url}";
+alert(msg);
+document.location.href = url;
+</script>
 </body>
 </html>
