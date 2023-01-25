@@ -94,7 +94,6 @@
 								id="flexCheckChecked" checked> <label
 								class="form-check-label" for="flexCheckChecked"> 버튼 누르면 나올 체크박스 리스트들 </label>
 								지역명들이 들어갈 자리임.
-								
 						</div>
 					</div>
 				</div>
