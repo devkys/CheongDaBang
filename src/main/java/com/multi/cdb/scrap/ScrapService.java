@@ -64,4 +64,9 @@ public class ScrapService {
 		return dao.my_replyAll(vo);
 	}
 	
+	// 스크랩 삭제 기능
+	public int my_scrapdelete(ScrapVO vo) {
+		return dao.scrap_delete(vo);
+	}
+	
 }

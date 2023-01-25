@@ -65,6 +65,11 @@ public class ScrapDAO {
 		return mybatis.selectList("scrap.MyBBS_replyall", vo);
 	}
 	
+	// 스크랩 삭제 기능
+	public int scrap_delete(ScrapVO vo) {
+		return mybatis.delete("scrap.scrap_delete", vo);
+	}
+	
 	
 	
 	

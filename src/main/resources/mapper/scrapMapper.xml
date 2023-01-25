@@ -66,6 +66,11 @@
 		where member_id = #{member_id} order by reply_id desc
 	</select>
 	
+	<!-- 스크랩 삭제 기능 -->
+	<delete id="scrap_delete" parameterType="scrapVO">
+		delete from scrap where scrap_member = #{member_id} and scrap_num = #{scrap_num};
+	</delete>
+	
 	
 	<!-- 스크랩 보내주는 기능 -->
 	<insert id="scrap" parameterType="scrapVO"><!-- scrap_type은 "Policy", "Com", "Home", "Job"으로 해주세요 -->

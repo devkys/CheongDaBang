@@ -27,7 +27,8 @@ table {
 	</thead>
 	<c:forEach items="${list}" var="scrap_job">
 	<tr class="ttt">
-		<td><a href="${scrap_job.scrap_link}" target="_blank">${scrap_job.scrap_title}</a></td>
+<td><a href="${scrap_job.scrap_link}" target="_blank">${scrap_job.scrap_title}</a>
+<!-- &nbsp;&nbsp;&nbsp;<a href="scrap_delete"><small style="color: red;">삭제</small></a> --></td>
 	</tr>
 	</c:forEach>
 </table>

@@ -2,6 +2,7 @@ package com.multi.cdb.scrap;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,11 +79,18 @@ public class ScrapController {
 		model.addAttribute("list", list);
 	}
 	
-	
-	
-	
-	
-	
+//	// 스크랩 삭제
+//	@RequestMapping("member/scrap_delete${scrap_home.scrap_num}")
+//	public void scrapdelete(Model model, HttpSession session, ScrapVO vo, HttpServletRequest request) {
+//		// 삭제에 필요한 데이터 전송(scrap_member, scrap_num)
+//		String id = (String) session.getAttribute("member_id");//형변환 및 세션 설정된 id 수집
+//		String num = request.getParameter("");
+//		vo.setScrap_member(id);
+//		vo.setScrap_num(num);
+//		service.my_scrapdelete(vo);
+//		model.addAttribute("vo", vo);
+//		
+//	}
 	
 	// 커뮤니티 작성 글 리스트 출력
 	@RequestMapping("member/MyBbs")
@@ -101,15 +109,6 @@ public class ScrapController {
 		List<BbsVO> list = service.my_comlistall(vo);
 		model.addAttribute("list", list);
 	}
-	
-//	// 커뮤니티 및 댓글 제목 클릭시 상세페이지로 넘어감
-//	@RequestMapping("bbs/bbs_contents")
-//	public void clicktitle(BbsVO vo, ReplyVO vo2,HttpSession session, Model model) {
-//		String id = (String) session.getAttribute("member_id");
-//		vo.setMember_id(id);
-//		List<BbsVO> list = service.my_comlist(vo);
-//		model.addAttribute("list", list);
-//	}
 	
 	// 커뮤니티 댓글 리스트 출력
 	@RequestMapping("member/MyBbsReply")

@@ -82,7 +82,7 @@ public class MemberController {
 //		}
 //	}
 
-	// 로그인 체크
+	// 로그인
 	@RequestMapping("member/loginCheck")
 	public void login(MemberVO vo, HttpSession session, Model model) {
 		MemberVO vo2 = service.login(vo);
@@ -101,12 +101,26 @@ public class MemberController {
 	// 로그인 성공시 view로 보내는 메서드
 	@RequestMapping("member/login2")
 	public String views() {
-		return "member/login";
+		return "redirect:MyPage.jsp";//로그인 성공시 마이페이지로 이동하게 됨
+//		return "member/login";
 	}
 
 	// 로그아웃
 	@RequestMapping("member/logout")
-	public void logout(HttpSession session) {
+	public void logout(HttpSession session, Model model) {
 		session.invalidate();
+		String msg = "로그아웃 되었습니다";// 로그아웃 메시지 출력
+		String url = "CdbLogin.jsp";//로그인 페이지로 돌아가기 위함
+		model.addAttribute("msg", msg);
+		model.addAttribute("url", url);
 	}
+	
+//	// 로그인 필요한 기능일 시 로그인 판단
+//	public void loginapply() {
+//	String msg = "로그인이 필요합니다";// 로그아웃 메시지 출력
+//	String url = "CdbLogin.jsp";//로그인 페이지로 돌아가기 위함
+//	model.addAttribute("msg", msg);
+//	model.addAttribute("url", url);
+//		
+//	}
 }
