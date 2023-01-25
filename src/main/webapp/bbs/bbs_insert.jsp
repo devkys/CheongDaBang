@@ -18,6 +18,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 
+
 </head>
 <body>
  <div>
@@ -31,8 +32,8 @@
 					enctype="multipart/form-data">
 				<span class="input-group-text">제목</span> <input type="text"
 					class="form-control input-sm" name="bbs_title" placeholder="title"><br>
-				<span class="input-group-text">작성자</span> <input type="text"
-					class="form-control" name="member_id" placeholder="id"><br>
+				 <input type="hidden"
+					class="form-control input-sm" name="member_id" value="${member_id}" placeholder="id"><br>
 				<span class="input-group-text">내용</span> <input type="text"
 					class="form-control" name="bbs_contents" placeholder="bbs_contents" style="height: 360px;" ><br>
 				<span class="input-group-text">IMG</span> 파일 선택: <input type="file"
