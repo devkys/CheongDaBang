@@ -50,15 +50,22 @@
 		<!-- 좋아요 -->
 		<form action="bbs_recommend">
 			<input type="hidden" class="form-control input-sm" name="bbs_Id"
-				value="${vo.bbs_Id}"><br> <span
-				class="input-group-text">member_id</span> <input type="text"
-				class="form-control input-sm" name="member_id"><br>
+				value="${vo.bbs_Id}"><br>
+				<input type="hidden" class="form-control input-sm" name="member_id"
+				value="${member_id}"><br>
 			<button class="btn btn-outline-primary" >좋아요 ${count} </button>
 		</form>
 		
 	</div>
-	
-	
+	<div style="width: 80%; ">
+	<form action="bbsDel">
+	<input type="hidden" class="form-control input-sm" name="bbs_Id"
+				value="${vo.bbs_Id}"><br>
+				<input type="hidden" class="form-control input-sm" name="member_id"
+				value="${member_id}"><br>
+				<button class="btn btn-outline-danger" style= "float: right">게시글 삭제</button>
+	</form>
+	</div>
 			
 	
 	<div id="d2" style="width: 80%; margin-left: auto; margin-right: auto; ">
@@ -66,8 +73,8 @@
 
 		<form action="reply_insert">
 
-			<span class="input-group-text">작성자</span> <input type="text"
-				class="form-control input-sm" name="member_id"><br> <span
+			<input type="hidden" class="form-control input-sm" name="member_id"
+				value="${member_id}"><br> <span
 				class="input-group-text">내용</span> <input type="text"
 				class="form-control" name="reply_contents" style="height: 80px"><br> <input
 				type="hidden" class="form-control" name="bbs_Id"
@@ -89,7 +96,7 @@
 					<td>${vo2.member_id}</td>
 					<td>${vo2.reply_contents}</td>
 					<td><a
-						href="${path}/bbs/reply_del?reply_id=${vo2.reply_id}"><button type="button" class="btn btn-outline-danger">삭제</button></a></td>
+						href="${path}/bbs/reply_del?reply_id=${vo2.reply_id}&member_id=${member_id}"><button type="button" class="btn btn-outline-danger">삭제</button></a></td>
 				</tr>
 			</c:forEach>
 		</table>
