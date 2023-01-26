@@ -3,17 +3,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>페이징 된 리스트 불러올 jsp파일</title>
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	/* 	$(function() {
 	 $.ajax({
@@ -59,6 +63,7 @@ label {
 </head>
 
 <body>
+<%@include file="../includes/header.jsp" %>
 	<div style="margin: 3%"><br> <br> <br>
 	<div align="center" style="font-size: 45px; color:#40c1c9;">
 	<strong>ㅡ 채용 정보 ㅡ</strong>
@@ -281,5 +286,6 @@ label {
 	</div>
 	<!-- 페이지네이션 끝 -->
 	</div>
+	<%@include file="../includes/footer.jsp" %>
 </body>
 </html>

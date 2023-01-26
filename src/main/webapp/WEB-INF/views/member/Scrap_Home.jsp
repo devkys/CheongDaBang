@@ -7,7 +7,7 @@
 <% @SuppressWarnings("unchecked")
 List<ScrapVO> list = (List<ScrapVO>)request.getAttribute("list");
 int size = list.size();
-if(size > 1){
+if(size >= 1){
 %>
 <table border="1">
 	<thead>
@@ -18,10 +18,7 @@ if(size > 1){
 	<c:forEach items="${list}" var="scrap_home" >
 	<tr >
 		<td><a href="${scrap_home.scrap_link}" target="_blank">${scrap_home.scrap_title}</a>
-<%-- 		&nbsp;&nbsp;&nbsp;
-		<input type="hidden" value="${scrap_home.scrap_num}" name="${scrap_home.scrap_num}">
-		<a href="scrap_delete${scrap_home.scrap_num}"></a>
-		<button class="ttt"><small style="color: red;">삭제</small></button> --%></td>
+</td>
 	</tr>
 	</c:forEach>
 	<tfoot>

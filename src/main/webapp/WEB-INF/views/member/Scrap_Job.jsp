@@ -7,7 +7,7 @@
 <% @SuppressWarnings("unchecked")
 List<ScrapVO> list = (List<ScrapVO>)request.getAttribute("list");
 int size = list.size();
-if(size > 1){
+if(size >= 1){
 %>
 <table border="1">
 	<thead>

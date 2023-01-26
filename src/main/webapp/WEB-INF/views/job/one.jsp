@@ -1,18 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 
 <title>Insert title here</title>
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <style type="text/css">
 a {
 	text-decoration: none;
@@ -21,7 +25,8 @@ a {
 </style>
 </head>
 <body>
-
+<%@include file="../includes/header.jsp" %>
+<div style="height: auto; min-height: 100%; padding-bottom:50px;">
 	<!--	 제목부분	 -->
 	<div style="margin: 3%">
 		<c:forEach var="vo" items='${list}'>
@@ -147,6 +152,8 @@ a {
 		</button>
 	</div>
 
+</div>
+	<%@include file="../includes/footer.jsp" %>
 <!--	스크랩  ajax	  -->
 		<script>
 		var req = {
@@ -189,6 +196,5 @@ a {
 		}) // root function
 		
 		</script>
-
 </body>
 </html>

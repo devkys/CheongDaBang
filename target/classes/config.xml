@@ -7,6 +7,7 @@
    <typeAliases>
 
     	<typeAlias type="com.multi.cdb.yPolicy.YPolicyVO" alias="yPolicyVO"/>
+    	<typeAlias type="com.multi.cdb.yPolicy.YPolicyfilterVO" alias="YPolicyfilterVO"/>
     	<typeAlias type="com.multi.cdb.yPolicy.PageVO" alias="pageVO" />
 		<typeAlias type="com.multi.cdb.scrap.ScrapVO" alias = "scrapVO" />
 		<typeAlias type="com.multi.cdb.member.MemberVO" alias = "memberVO" />

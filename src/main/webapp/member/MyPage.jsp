@@ -1,14 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>청다방 마이페이지</title>
-<link rel="stylesheet" href="../resources/css/header.css">
-<link rel="stylesheet" href="../resources/css/footer.css">
+<link rel="stylesheet" href="${path}/resources/css/header.css">
+<link rel="stylesheet" href="${path}/resources/css/footer.css">
 <link rel="stylesheet" href="../resources/css/cdbmypage.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/4e0c810bcc.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 //jquery start
 $(function() {
@@ -73,6 +76,7 @@ $(function() {
 </head>
 <body>
 <%@ include file="../WEB-INF/views/includes/header.jsp" %>
+<div style="height: auto; min-height:100%; padding-bottom:50px;">
 <h1 align="center">청다방 마이페이지</h1>
 <div class="head"><a href="MyInfoEdit.jsp"><button type="button" style="">내 정보 수정하기</button></a>&nbsp;<a href="logout">로그아웃</a><br></div>
 <br>
@@ -83,6 +87,7 @@ $(function() {
 	<div class="mylist" id="Job">일자리</div>
 	<div class="mylist" id="ComB">커뮤니티에 작성하신 글</div>
 	<div class="mylist" id="ComR">커뮤니티에 작성하신 댓글</div>
+</div>
 </div>
 <%@ include file="../WEB-INF/views/includes/footer.jsp" %>
 </body>

@@ -8,8 +8,11 @@ public class Criteria {
 
 	private int startRow; // 가져올 글의 행 번호
 
-	private String type = ""; // 검색 유형
+
+	private String searchType = ""; // 검색 유형
 	private String keyword = ""; // 검색어
+	private String kArea = ""; // 
+	private int sal = 0; // 
 
 	public Criteria() {
 		this(1, 10);
@@ -18,6 +21,7 @@ public class Criteria {
 	public Criteria(int pageNum, int amount) {
 		this.pageNum = pageNum;
 		this.amount = amount;
+
 	}
 
 	/*
@@ -33,14 +37,14 @@ public class Criteria {
 		return amount;
 	}
 
-	public String getType() {
-		return type;
+	public String getSearchType() {
+		return searchType;
 	}
-
-	public void setType(String type) {
-		this.type = type;
+	
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
 	}
-
+	
 	public String getKeyword() {
 		return keyword;
 	}
@@ -64,4 +68,26 @@ public class Criteria {
 	public void setStartRow(int startRow) {
 		this.startRow = startRow;
 	}
+
+	public String getkArea() {
+		return kArea;
+	}
+
+	public void setkArea(String kArea) {
+		this.kArea = kArea;
+	}
+
+	public int getSal() {
+		return sal;
+	}
+
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+	@Override
+	public String toString() {
+		return "Criteria [pageNum=" + pageNum + ", amount=" + amount + ", startRow=" + startRow + ", searchType="
+				+ searchType + ", keyword=" + keyword + ", kArea=" + kArea + ", sal=" + sal + "]";
+	}
+	
 }

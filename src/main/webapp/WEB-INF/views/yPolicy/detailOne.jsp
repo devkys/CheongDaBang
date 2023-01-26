@@ -19,7 +19,7 @@
 	
 	req = {
 		scrap_title : "${list[0].YP_NAME}",
-		scrap_link : 'detailOne?YP_NAME=${list[0].YP_NAME}&YP_VIEW=0',
+		scrap_link : '/cdb/yPolicy/detailOne?YP_NAME=${list[0].YP_NAME}&YP_VIEW=0',
 		scrap_type : "Policy",
 		scrap_member : "${member_id}"
 	};

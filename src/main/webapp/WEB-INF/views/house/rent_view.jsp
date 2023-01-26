@@ -188,7 +188,7 @@ a {
 		var req = {
 				"scrap_title": "${list[0].br_pbname}",
 				"scrap_link" : '/cdb/house/rent_view?br_pbid=${list[0].br_pbid}&br_brtc=${list[0].br_brtc}',
-				"scrap_type" : "Rent",
+				"scrap_type" : "Home",
 				"scrap_member": "${member_id}"
 			};
 		

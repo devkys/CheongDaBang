@@ -24,7 +24,7 @@
 		<div class="top">
 			<div class="logo">
 				<a href="/cdb/mainfunction/main.jsp"><img
-					src="${path}/resources/img/cdbLogo2.png" alt="cdblogo"></a>
+					src="${path}/resources/img/cdbLogo1.png" alt="cdblogo"></a>
 			</div>
 
 
@@ -103,13 +103,11 @@
 					</ul></li>
 				<li><a href="/cdb/job/recruitList">일자리 채용 정보</a>
 					<ul class="main2">
-						<li><a href="/cdb/job/recruitList">채용 정보</a></li>
-						<li><a href="#">급여 정산 계산기</a></li>
 					</ul></li>
 				<li><a href="/cdb/bbs/bbs_main.jsp">커뮤니티</a>
 					<ul class="main2">
 						<li><a href="/cdb/bbs/bbs_main.jsp">정보공유 게시판</a></li>
-						<li><a href="#">청년 뉴스</a></li>
+						<li><a href="/cdb/bbs/news2.jsp">청년 뉴스</a></li>
 					</ul></li>
 			</ul>
 		</div>

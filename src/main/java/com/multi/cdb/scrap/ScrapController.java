@@ -2,13 +2,15 @@ package com.multi.cdb.scrap;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.multi.cdb.bbs.BbsVO;
 import com.multi.cdb.bbs.ReplyVO;
@@ -127,7 +129,56 @@ public class ScrapController {
 		List<ReplyVO> list = service.my_replylistall(vo);
 		model.addAttribute("list", list);
 	}
-	
+	// 공공 "임대" 주택 스크랩 컨트롤러
+		@RequestMapping(value = "scrap/rent_scrap", method = RequestMethod.POST)
+		public @ResponseBody int rent(@RequestBody ScrapVO vo) {
+			int scrap = service.scrap_count(vo);
+			System.out.println(vo);
+			if (scrap == 0) {
+				service.scrap(vo);
+			} else if (scrap == 1) {
+				service.scrap_delete(vo);
+			}
+			return scrap;
+		}
+
+		// 공공 "분양" 주택 스크랩 컨트롤러
+		@RequestMapping(value = "scrap/sale_scrap", method = RequestMethod.POST)
+		public @ResponseBody int sale(@RequestBody ScrapVO vo) {
+			int scrap = service.scrap_count(vo);
+			System.out.println(vo);
+			if (scrap == 0) {
+				service.scrap(vo);
+			} else if (scrap == 1) {
+				service.scrap_delete(vo);
+			}
+			return scrap;
+		}
+
+		@RequestMapping(value = "scrap/policy_scrap", method = RequestMethod.POST)
+		public @ResponseBody int policy(@RequestBody ScrapVO vo) {
+			int scrap = service.scrap_count(vo);
+			System.out.println(vo);
+			if (scrap == 0) {
+				service.scrap(vo);
+			} else if (scrap == 1) {
+				service.scrap_delete(vo);
+			}
+			return scrap;
+		}
+
+		@RequestMapping(value = "scrap/job_scrap", method = RequestMethod.POST)
+		public @ResponseBody int job(@RequestBody ScrapVO vo) {
+			int scrap = service.scrap_count(vo);
+			System.out.println(vo);
+			if (scrap == 0) {
+				service.scrap(vo);
+			} else if (scrap == 1) {
+				service.scrap_delete(vo);
+			}
+			return scrap;
+		}
+			
 	
 	
 	

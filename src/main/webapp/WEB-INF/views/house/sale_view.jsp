@@ -150,7 +150,7 @@
 		var req = {
 				"scrap_title": "${list[0].by_pbname}",
 				"scrap_link" : '/cdb/house/rent_view?by_pbid=${list[0].by_pbid}&by_brtc=${list[0].by_brtc}',
-				"scrap_type" : "Sale",
+				"scrap_type" : "Home",
 				"scrap_member": "${member_id}"
 			};
 		// 스크랩 관련 ajax
